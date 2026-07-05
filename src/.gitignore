@@ -1,0 +1,17 @@
+# Build output
+build/
+
+# Java compiled files
+*.class
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+
+# macOS
+.DS_Store
