@@ -43,7 +43,8 @@
 \newcolumntype{J}{>{\justifying\arraybackslash}X}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\raggedright\ttfamily\footnotesize\arraybackslash}p{#1}}
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{7pt}
 
 \urlstyle{same}
 \def\UrlBreaks{\do\/\do\-\do\_\do\.\do\:\do\(\do\)}
@@ -402,7 +403,7 @@ The ElderEarn platform is strategically designed and technically calibrated to a
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|}
+\begin{tabularx}{\textwidth}{|L{2.2cm}|L{3.8cm}|J|}
 \hline
 \textbf{Goal} & \textbf{Title} & \textbf{Direct Relevance to ElderEarn} \\ \hline
 \textbf{SDG 8} & Decent Work and Economic Growth & Provides flexible, self-paced, dignified micro-earning opportunities for retired elderly individuals while equipping younger learners with marketable vocational capabilities. \\ \hline
@@ -479,7 +480,7 @@ A rigorous analysis of the contemporary educational, freelance, and gig-economy 
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|L{3.2cm}|J|J|}
+\begin{tabularx}{\textwidth}{|L{3.4cm}|J|J|}
 \hline
 \textbf{Feature Dimension} & \textbf{Conventional Platforms (Coursera, Upwork, Urban Co)} & \textbf{ElderEarn Platform} \\ \hline
 \textbf{Target Instructor Persona} & Corporate trainers, young digital agencies, physical laborers & Retired seniors, elderly artisans, experienced veterans \\ \hline
@@ -544,7 +545,7 @@ The server infrastructure hosts the application container, executes business log
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|J|}
+\begin{tabularx}{\textwidth}{|L{2.4cm}|L{4.0cm}|J|}
 \hline
 \textbf{Category} & \textbf{Component} & \textbf{Specification / Requirement} \\ \hline
 \textbf{Hardware} & Central Processing Unit & Intel Core i5 / AMD Ryzen 5 or higher (Quad-Core, 2.5 GHz+) \\ \hline
@@ -555,7 +556,7 @@ The server infrastructure hosts the application container, executes business log
 \textbf{Software} & Runtime Environment & Java Development Kit (JDK 17 or JDK 21 LTS, OpenJDK) \\ \hline
 \textbf{Software} & Web Application Server & Apache Tomcat 9.0 / 10.1 Application Server \\ \hline
 \textbf{Software} & Database Management & MySQL Community Server 8.0 Enterprise Relational DB \\ \hline
-\textbf{Software} & Integrated Dev Env & Eclipse IDE for Enterprise Java and Web Developers (2023/2024) \\ \hline
+\textbf{Software} & Integrated Dev Env & Eclipse IDE for Enterprise Java and Web Developers \\ \hline
 \textbf{Software} & Database Tooling & MySQL Workbench 8.0 CE / phpMyAdmin \\ \hline
 \textbf{Software} & Version Control & Git 2.40+ distributed version control client \\ \hline
 \end{tabularx}
@@ -568,7 +569,7 @@ ElderEarn is a fully responsive web application engineered to run smoothly on di
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|J|}
+\begin{tabularx}{\textwidth}{|L{2.4cm}|L{4.0cm}|J|}
 \hline
 \textbf{Category} & \textbf{Component} & \textbf{Minimum Client Specification} \\ \hline
 \textbf{Hardware} & Client Device & Desktop PC, Laptop, Tablet, or Modern Smartphone \\ \hline
@@ -656,7 +657,7 @@ The architecture of ElderEarn is partitioned into five tightly integrated, decou
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|J|}
+\begin{tabularx}{\textwidth}{|L{2.2cm}|L{4.0cm}|J|}
 \hline
 \textbf{Module No.} & \textbf{Module Name} & \textbf{Primary Operational Responsibilities} \\ \hline
 \textbf{Module 1} & Senior Citizen Mentor Module & Mentor onboarding, profile bio customization, course syllabus creation, instructional video upload, consultation availability management, and earnings withdrawal. \\ \hline
@@ -720,19 +721,19 @@ The \texttt{users} table maintains master demographic and authentication records
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{user\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique system identifier for the user \\ \hline
-\texttt{full\_name} & VARCHAR(100) & NOT NULL & Complete legal or display name \\ \hline
-\texttt{email} & VARCHAR(120) & NOT NULL, UNIQUE & Unique login email address \\ \hline
-\texttt{password\_hash} & VARCHAR(255) & NOT NULL & Cryptographic SHA-256 password hash \\ \hline
-\texttt{phone\_number} & VARCHAR(20) & NOT NULL & Contact telephone number \\ \hline
-\texttt{role} & ENUM & NOT NULL ('MENTOR','STUDENT','ADMIN') & Role defining authorization level \\ \hline
-\texttt{bio} & TEXT & NULL & Biographical summary / experience details \\ \hline
-\texttt{profile\_image} & VARCHAR(255) & DEFAULT 'default.png' & Relative filepath to profile photo \\ \hline
-\texttt{is\_active} & BOOLEAN & DEFAULT TRUE & Account status flag for moderation \\ \hline
-\texttt{created\_at} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Account creation timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+user\_id & INT (Primary Key) & Unique system identifier for the user \\ \hline
+full\_name & VARCHAR(100) & Complete legal or display name \\ \hline
+email & VARCHAR(120) (Unique) & Unique registered login email address \\ \hline
+password\_hash & VARCHAR(255) & Cryptographic SHA-256 password hash \\ \hline
+phone\_number & VARCHAR(20) & Contact telephone number \\ \hline
+role & ENUM('MENTOR',...) & User role defining authorization privileges \\ \hline
+bio & TEXT & Biographical summary and domain experience \\ \hline
+profile\_image & VARCHAR(255) & Relative filepath to uploaded profile photo \\ \hline
+is\_active & BOOLEAN & Account active status flag for moderation \\ \hline
+created\_at & TIMESTAMP & Account registration timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Users Table}
 \end{table}
@@ -743,18 +744,18 @@ Maintains metadata regarding courses and skill offerings published by senior men
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{course\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique identifier for the course offering \\ \hline
-\texttt{mentor\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & Reference to the publishing mentor \\ \hline
-\texttt{title} & VARCHAR(150) & NOT NULL & Concise descriptive title of the skill \\ \hline
-\texttt{category} & VARCHAR(80) & NOT NULL & Domain classification (e.g., Arts, Finance) \\ \hline
-\texttt{description} & TEXT & NOT NULL & Detailed curriculum description \\ \hline
-\texttt{hourly\_rate} & DECIMAL(10,2) & NOT NULL, CHECK $\ge 0$ & Tariff per consultation session \\ \hline
-\texttt{thumbnail\_url} & VARCHAR(255) & NULL & Promotional cover image path \\ \hline
-\texttt{status} & ENUM & DEFAULT 'ACTIVE' & Operational status ('ACTIVE','ARCHIVED') \\ \hline
-\texttt{created\_at} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Publishing timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+course\_id & INT (Primary Key) & Unique identifier for the course offering \\ \hline
+mentor\_id & INT (Foreign Key) & Reference to publishing mentor in users table \\ \hline
+title & VARCHAR(150) & Concise descriptive title of the skill \\ \hline
+category & VARCHAR(80) & Domain classification (e.g., Arts, Finance) \\ \hline
+description & TEXT & Detailed curriculum description and prerequisites \\ \hline
+hourly\_rate & DECIMAL(10,2) & Tariff per consultation session ($\ge 0$) \\ \hline
+thumbnail\_url & VARCHAR(255) & Promotional cover image path \\ \hline
+status & ENUM('ACTIVE',...) & Operational status ('ACTIVE','ARCHIVED') \\ \hline
+created\_at & TIMESTAMP & Publishing timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Skills Courses Table}
 \end{table}
@@ -765,16 +766,16 @@ Maintains records of multimedia video lessons attached to specific skill courses
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{video\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique identifier for the video asset \\ \hline
-\texttt{course\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{skills\_courses} & Reference to parent course offering \\ \hline
-\texttt{video\_title} & VARCHAR(150) & NOT NULL & Title of the specific video module \\ \hline
-\texttt{file\_path} & VARCHAR(255) & NOT NULL & Secure storage path on server filesystem \\ \hline
-\texttt{duration\_sec} & INT & DEFAULT 0 & Video duration in seconds \\ \hline
-\texttt{sequence\_order} & INT & DEFAULT 1 & Playback ordering sequence \\ \hline
-\texttt{upload\_date} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Date and time of video upload \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+video\_id & INT (Primary Key) & Unique identifier for the video asset \\ \hline
+course\_id & INT (Foreign Key) & Reference to parent course offering \\ \hline
+video\_title & VARCHAR(150) & Title of the specific video module \\ \hline
+file\_path & VARCHAR(255) & Secure storage path on server filesystem \\ \hline
+duration\_sec & INT & Video duration in seconds \\ \hline
+sequence\_order & INT & Playback ordering sequence \\ \hline
+upload\_date & TIMESTAMP & Date and time of video upload \\ \hline
 \end{tabularx}
 \caption{Data Design: Course Videos Table}
 \end{table}
@@ -785,19 +786,19 @@ Tracks consultation appointments, scheduled time slots, and session lifecycle st
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{booking\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique session booking identifier \\ \hline
-\texttt{course\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{skills\_courses} & Associated course offering \\ \hline
-\texttt{student\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & Learner booking the session \\ \hline
-\texttt{mentor\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & Senior mentor conducting session \\ \hline
-\texttt{session\_date} & DATE & NOT NULL & Scheduled date for consultation \\ \hline
-\texttt{session\_time} & TIME & NOT NULL & Scheduled start time \\ \hline
-\texttt{agreed\_fee} & DECIMAL(10,2) & NOT NULL & Locked fee held in escrow \\ \hline
-\texttt{status} & ENUM & NOT NULL & 'PENDING','CONFIRMED','COMPLETED','CANCELLED' \\ \hline
-\texttt{meeting\_link} & VARCHAR(255) & NULL & External virtual meeting URL \\ \hline
-\texttt{created\_at} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Booking timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+booking\_id & INT (Primary Key) & Unique session booking identifier \\ \hline
+course\_id & INT (Foreign Key) & Associated skill course offering \\ \hline
+student\_id & INT (Foreign Key) & Learner booking the consultation session \\ \hline
+mentor\_id & INT (Foreign Key) & Senior mentor conducting the session \\ \hline
+session\_date & DATE & Scheduled date for consultation \\ \hline
+session\_time & TIME & Scheduled consultation start time \\ \hline
+agreed\_fee & DECIMAL(10,2) & Locked session fee held in escrow \\ \hline
+status & ENUM('PENDING',...) & 'PENDING','CONFIRMED','COMPLETED','CANCELLED' \\ \hline
+meeting\_link & VARCHAR(255) & External virtual meeting URL \\ \hline
+created\_at & TIMESTAMP & Booking creation timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Bookings and Sessions Table}
 \end{table}
@@ -808,16 +809,16 @@ Records in-platform communication between learners and mentors.
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{message\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique identifier for the message \\ \hline
-\texttt{sender\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & User dispatching the message \\ \hline
-\texttt{receiver\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & Recipient user identifier \\ \hline
-\texttt{booking\_id} & INT & NULL, FOREIGN KEY & Optional reference to context booking \\ \hline
-\texttt{message\_text} & TEXT & NOT NULL & Content of the text message \\ \hline
-\texttt{is\_read} & BOOLEAN & DEFAULT FALSE & Read confirmation receipt flag \\ \hline
-\texttt{sent\_at} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Transmission timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+message\_id & INT (Primary Key) & Unique identifier for the message \\ \hline
+sender\_id & INT (Foreign Key) & User dispatching the message \\ \hline
+receiver\_id & INT (Foreign Key) & Recipient user identifier \\ \hline
+booking\_id & INT (Foreign Key) & Optional reference to context booking \\ \hline
+message\_text & TEXT & Content of the text message \\ \hline
+is\_read & BOOLEAN & Read confirmation receipt flag \\ \hline
+sent\_at & TIMESTAMP & Transmission timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Chat Messages Table}
 \end{table}
@@ -828,15 +829,15 @@ Maintains the real-time financial balance states for each participant.
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{wallet\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique wallet identifier \\ \hline
-\texttt{user\_id} & INT & UNIQUE, FOREIGN KEY $\rightarrow$ \texttt{users} & Account owner reference \\ \hline
-\texttt{available\_balance} & DECIMAL(10,2) & NOT NULL, DEFAULT 0.00 & Cleared, withdrawable cash funds \\ \hline
-\texttt{escrow\_balance} & DECIMAL(10,2) & NOT NULL, DEFAULT 0.00 & Funds locked in pending sessions \\ \hline
-\texttt{total\_earned} & DECIMAL(10,2) & NOT NULL, DEFAULT 0.00 & Cumulative lifetime gross earnings \\ \hline
-\texttt{updated\_at} & TIMESTAMP & ON UPDATE CURRENT\_TIMESTAMP & Last ledger mutation timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+wallet\_id & INT (Primary Key) & Unique wallet identifier \\ \hline
+user\_id & INT (FK, Unique) & Account owner reference in users table \\ \hline
+available\_balance & DECIMAL(10,2) & Cleared, withdrawable cash funds \\ \hline
+escrow\_balance & DECIMAL(10,2) & Funds locked in pending sessions \\ \hline
+total\_earned & DECIMAL(10,2) & Cumulative lifetime gross earnings \\ \hline
+updated\_at & TIMESTAMP & Last ledger mutation timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Wallet Accounts Table}
 \end{table}
@@ -847,16 +848,16 @@ Provides an immutable double-entry audit trail for all balance movements.
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{txn\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique transaction record ID \\ \hline
-\texttt{wallet\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{wallet\_accounts} & Originating / affected wallet \\ \hline
-\texttt{booking\_id} & INT & NULL, FOREIGN KEY & Associated consultation session \\ \hline
-\texttt{amount} & DECIMAL(10,2) & NOT NULL & Monetary transaction magnitude \\ \hline
-\texttt{txn\_type} & ENUM & NOT NULL & 'TOPUP','ESCROW\_LOCK','PAYOUT','REFUND' \\ \hline
-\texttt{description} & VARCHAR(255) & NOT NULL & Human-readable transaction reason \\ \hline
-\texttt{txn\_timestamp} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Execution timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+txn\_id & INT (Primary Key) & Unique transaction record ID \\ \hline
+wallet\_id & INT (Foreign Key) & Originating / affected wallet reference \\ \hline
+booking\_id & INT (Foreign Key) & Associated consultation session booking \\ \hline
+amount & DECIMAL(10,2) & Monetary transaction magnitude \\ \hline
+txn\_type & ENUM('TOPUP',...) & 'TOPUP','ESCROW\_LOCK','PAYOUT','REFUND' \\ \hline
+description & VARCHAR(255) & Human-readable transaction reason \\ \hline
+txn\_timestamp & TIMESTAMP & Execution timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Wallet Transactions Table}
 \end{table}
@@ -867,15 +868,15 @@ Stores structured ratings and qualitative feedback submitted by verified learner
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|l|l|J|}
+\begin{tabularx}{\textwidth}{|>{\ttfamily}L{3.4cm}|L{3.2cm}|J|}
 \hline
-\textbf{Field Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
-\texttt{review\_id} & INT & PRIMARY KEY, AUTO\_INCREMENT & Unique review identifier \\ \hline
-\texttt{course\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{skills\_courses} & Evaluated course offering \\ \hline
-\texttt{student\_id} & INT & FOREIGN KEY $\rightarrow$ \texttt{users(user\_id)} & Authoring learner \\ \hline
-\texttt{rating\_score} & INT & CHECK (1 to 5) & Numerical score (1=Poor to 5=Excellent) \\ \hline
-\texttt{review\_comment} & TEXT & NULL & Narrative qualitative assessment \\ \hline
-\texttt{created\_at} & TIMESTAMP & DEFAULT CURRENT\_TIMESTAMP & Submission timestamp \\ \hline
+\textbf{Field Name} & \textbf{Data Type \& Key} & \textbf{Description} \\ \hline
+review\_id & INT (Primary Key) & Unique review identifier \\ \hline
+course\_id & INT (Foreign Key) & Evaluated course offering \\ \hline
+student\_id & INT (Foreign Key) & Authoring learner user identifier \\ \hline
+rating\_score & INT (1 to 5) & Numerical score (1=Poor to 5=Excellent) \\ \hline
+review\_comment & TEXT & Narrative qualitative assessment \\ \hline
+created\_at & TIMESTAMP & Submission timestamp \\ \hline
 \end{tabularx}
 \caption{Data Design: Reviews and Ratings Table}
 \end{table}
@@ -944,19 +945,19 @@ Unit testing focuses on verifying the correctness of individual methods, discret
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.2cm}|J|c|}
 \hline
-\textbf{Test ID} & \textbf{Component} & \textbf{Test Scenario} & \textbf{Expected Outcome} & \textbf{Status} \\ \hline
-\texttt{UT-01} & \texttt{DBConnection} & Retrieve connection from pooled DataSource & Active connection object returned without latency & Pass \\ \hline
-\texttt{UT-02} & \texttt{AuthServlet} & Validate empty email/password submission & HTTP 400 with descriptive error flag dispatched & Pass \\ \hline
-\texttt{UT-03} & \texttt{AuthServlet} & Validate password hash generation (SHA-256) & Hash matches reproducible 64-char hexadecimal string & Pass \\ \hline
-\texttt{UT-04} & \texttt{SkillDAO} & Create skill course with valid attributes & New record created with unique \texttt{course\_id} & Pass \\ \hline
-\texttt{UT-05} & \texttt{SkillDAO} & Create course with negative hourly tariff & \texttt{IllegalArgumentException} thrown; record rejected & Pass \\ \hline
-\texttt{UT-06} & \texttt{VideoUpload} & Check MIME type filter for non-video (.exe) & Upload rejected with invalid format exception & Pass \\ \hline
-\texttt{UT-07} & \texttt{VideoUpload} & Upload valid 25MB MP4 file & File saved to disk and metadata inserted in DB & Pass \\ \hline
-\texttt{UT-08} & \texttt{WalletDAO} & Retrieve wallet balance for valid user & Accurate \texttt{available} and \texttt{escrow} balances returned & Pass \\ \hline
-\texttt{UT-09} & \texttt{WalletDAO} & Lock funds exceeding available balance & Operation aborted; throws \texttt{InsufficientFundsException} & Pass \\ \hline
-\texttt{UT-10} & \texttt{ChatServlet} & Send empty message string & Message rejected; no database record created & Pass \\ \hline
+\textbf{Module Tested} & \textbf{Test Objective} & \textbf{Result} \\ \hline
+User Registration & Verify account creation and role assignment & Pass \\ \hline
+User Authentication & Verify credential validation and session initiation & Pass \\ \hline
+Password Hashing & Verify SHA-256 encryption integrity & Pass \\ \hline
+Course Creation & Verify skill course listing with valid tariff & Pass \\ \hline
+Tariff Validation & Reject negative or invalid hourly fee inputs & Pass \\ \hline
+Video Format Filter & Verify rejection of non-video file formats & Pass \\ \hline
+Video File Upload & Verify saving valid MP4 video to storage & Pass \\ \hline
+Wallet Balance Query & Verify retrieval of available and escrow balance & Pass \\ \hline
+Escrow Funds Check & Reject booking when balance is insufficient & Pass \\ \hline
+Chat Message Handler & Verify sanitization and transmission of message & Pass \\ \hline
 \end{tabularx}
 \caption{Unit Testing Test Cases and Results}
 \end{table}
@@ -967,17 +968,17 @@ Integration testing evaluates the cooperative interoperability between interconn
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.5cm}|J|c|}
 \hline
-\textbf{Test ID} & \textbf{Modules Integrated} & \textbf{Integration Test Scenario} & \textbf{Expected System Behavior} & \textbf{Status} \\ \hline
-\texttt{IT-01} & Auth $\rightarrow$ Session Manager & Authenticate valid mentor credentials & Session initialized with \texttt{role=MENTOR}; redirected to dashboard & Pass \\ \hline
-\texttt{IT-02} & Auth $\rightarrow$ RBAC Filter & Student attempts access to \texttt{/mentorDashboard} & Request intercepted; redirected to login with 403 Forbidden & Pass \\ \hline
-\texttt{IT-03} & Course $\rightarrow$ Video Registry & Mentor creates course and adds 3 videos & Cascade foreign keys link videos to course; playlist renders correctly & Pass \\ \hline
-\texttt{IT-04} & Booking $\rightarrow$ Escrow Wallet & Student books course session with sufficient balance & Course fee debited from available balance and credited to escrow ledger & Pass \\ \hline
-\texttt{IT-05} & Session $\rightarrow$ Payout Release & Student confirms session completion & Escrow released; mentor wallet credited with 95\%; 5\% platform fee logged & Pass \\ \hline
-\texttt{IT-06} & Chat $\rightarrow$ Notification & Student dispatches message to mentor & Message record created; mentor unread badge counter increments & Pass \\ \hline
-\texttt{IT-07} & Review $\rightarrow$ Course Catalog & Student submits 5-star review & Aggregate course rating recalculated; updated on search catalog & Pass \\ \hline
-\texttt{IT-08} & Wallet $\rightarrow$ Withdrawal & Mentor requests withdrawal of earned balance & Available balance decremented; withdrawal record queued for payout & Pass \\ \hline
+\textbf{Integrated Components} & \textbf{Expected System Behavior} & \textbf{Status} \\ \hline
+Frontend $\leftrightarrow$ Auth Servlet & User authenticated and session established & Pass \\ \hline
+Auth $\leftrightarrow$ RBAC Filter & Access to restricted mentor pages denied for students & Pass \\ \hline
+Course $\leftrightarrow$ Video Registry & Foreign keys link uploaded videos to parent course & Pass \\ \hline
+Booking $\leftrightarrow$ Escrow Wallet & Course fee locked in escrow ledger upon confirmation & Pass \\ \hline
+Session $\leftrightarrow$ Payout Release & Escrow balance released to mentor upon completion & Pass \\ \hline
+Chat $\leftrightarrow$ Notification & Message stored in DB and unread badge updated & Pass \\ \hline
+Review $\leftrightarrow$ Course Catalog & Aggregate star rating updated dynamically on catalog & Pass \\ \hline
+Wallet $\leftrightarrow$ Withdrawal & Available balance decremented and withdrawal logged & Pass \\ \hline
 \end{tabularx}
 \caption{Integration Testing Test Cases and Results}
 \end{table}
@@ -988,15 +989,15 @@ Validation testing confirms that user input conforms to strict schema constraint
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.0cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.2cm}|J|L{2.5cm}|}
 \hline
-\textbf{Test ID} & \textbf{Input Field} & \textbf{Test Input Value} & \textbf{Expected Validation Response} & \textbf{Status} \\ \hline
-\texttt{VT-01} & Email Address & \texttt{user@@domain..com} & Form validation rejects invalid RFC format & Pass \\ \hline
-\texttt{VT-02} & Telephone & \texttt{+91-ABCDE12345} & Rejection; requires exact 10-digit numerical sequence & Pass \\ \hline
-\texttt{VT-03} & Course Price & \texttt{-50.00} / \texttt{"Free"} & Rejection; requires positive numerical decimal & Pass \\ \hline
-\texttt{VT-04} & Search Query & \texttt{' OR '1'='1} & Sanitized by PreparedStatement; zero injection leak & Pass \\ \hline
-\texttt{VT-05} & Message Text & \texttt{<script>alert('XSS')</script>} & HTML-escaped during rendering; script does not execute & Pass \\ \hline
-\texttt{VT-06} & Session Date & Past date (\texttt{2020-01-01}) & Form rejects past date; requires future calendar date & Pass \\ \hline
+\textbf{Validation Parameter} & \textbf{Expected Outcome} & \textbf{Actual Outcome} \\ \hline
+Email Address Format & Rejection of non-RFC email formats & Achieved \\ \hline
+Telephone Number & Enforce exact 10-digit numerical sequence & Achieved \\ \hline
+Course Hourly Fee & Enforce positive numerical values ($\ge 0$) & Achieved \\ \hline
+Search Input Sanitization & PreparedStatement blocks SQL injection & Achieved \\ \hline
+Chat Message Sanitation & HTML-escaping blocks XSS script attacks & Achieved \\ \hline
+Consultation Date & Rejection of past dates; require future date & Achieved \\ \hline
 \end{tabularx}
 \caption{Validation Testing Test Cases and Results}
 \end{table}
@@ -1007,15 +1008,17 @@ User Acceptance Testing (UAT) evaluated platform usability, visual accessibility
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.8cm}|J|}
 \hline
-\textbf{UAT ID} & \textbf{User Persona} & \textbf{Evaluation Task} & \textbf{Participant Feedback / Observation} & \textbf{Verdict} \\ \hline
-\texttt{UAT-01} & Senior Citizen (Age 68) & Register account and publish gardening course & High praise for large typography and clear buttons; course published in 4 minutes & Accepted \\ \hline
-\texttt{UAT-02} & Senior Artisan (Age 64) & Upload 15MB MP4 craft video demonstration & Progress bar provided reassuring feedback; video playback verified smoothly & Accepted \\ \hline
-\texttt{UAT-03} & University Student & Search for finance course and book consultation & Navigation was intuitive; search filters returned relevant mentors immediately & Accepted \\ \hline
-\texttt{UAT-04} & Working Professional & Top-up wallet and execute escrow booking & Escrow safety explanation gave confidence to proceed with financial transaction & Accepted \\ \hline
-\texttt{UAT-05} & Senior Citizen (Age 72) & Review earned balance and request bank payout & Step-by-step confirmation dialog prevented anxiety; balance clearly displayed & Accepted \\ \hline
-\texttt{UAT-06} & University Student & Conduct post-session rating and feedback & Star rating interface was clean and submitted feedback reflected on course page & Accepted \\ \hline
+\textbf{Feature Evaluated} & \textbf{User Feedback} \\ \hline
+Senior Registration Process & Simple and easy to use with large, legible typography \\ \hline
+Course Publishing Interface & Clear step-by-step form; course published in under 5 minutes \\ \hline
+Video Demonstration Upload & Upload progress bar provided reassuring visual feedback \\ \hline
+Marketplace Search \& Discovery & Intuitive search filters allowed instant location of relevant mentors \\ \hline
+Session Booking \& Escrow & Transparent escrow lock explanation provided complete financial safety \\ \hline
+Digital Wallet \& Bank Payout & Clear balance summary and simple, secure payout withdrawal dialog \\ \hline
+In-Platform Mentorship Messaging & Direct communication facilitated smooth session coordination \\ \hline
+Post-Session Rating and Feedback & Star rating and review submission was straightforward and quick \\ \hline
 \end{tabularx}
 \caption{User Acceptance Testing Results}
 \end{table}
@@ -1123,14 +1126,14 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.2cm}|J|c|}
 \hline
-\textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\ \hline
-1 & Open Browser \& load \texttt{login.jsp} & Login page renders with email and password fields & Page rendered with HTTP 200 OK & Pass \\ \hline
-2 & Enter valid mentor email \& password & Credentials accepted into text input controls & Form inputs populated accurately & Pass \\ \hline
-3 & Click ``Sign In'' button & Form dispatched to \texttt{AuthServlet} via POST & POST dispatched; status HTTP 302 & Pass \\ \hline
-4 & Verify dashboard redirection & Redirection to \texttt{mentorDashboard.jsp} & Redirected; welcome banner matches & Pass \\ \hline
-5 & Test RBAC on restricted URL & System denies cross-role access to student page & Access blocked; redirected to dashboard & Pass \\ \hline
+\textbf{Test Step} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+Navigate to Login Page & Login interface loads with email and password fields & Pass \\ \hline
+Enter Mentor Credentials & Email and password fields accept valid test input & Pass \\ \hline
+Click Sign In Button & User is authenticated and session token is established & Pass \\ \hline
+Verify Dashboard URL & Redirection to mentor dashboard with welcome banner & Pass \\ \hline
+Verify RBAC Enforcement & System denies unauthorized cross-role access to student wallet & Pass \\ \hline
 \end{tabularx}
 \caption{Test Steps Execution: Test Case 1}
 \end{table}
@@ -1139,13 +1142,18 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|l|L{3.5cm}|}
+\begin{tabularx}{\textwidth}{|>{\bfseries}L{4.0cm}|J|}
 \hline
-\textbf{Field} & \textbf{Value} & \textbf{Field} & \textbf{Value} \\ \hline
-\textbf{Test Case ID} & \texttt{TC-AUTH-001} & \textbf{Test Module} & Authentication \& RBAC \\ \hline
-\textbf{Executed By} & Sobin Thankachan & \textbf{Execution Date} & 05-September-2026 \\ \hline
-\textbf{Execution Environment} & Chrome 128 / Windows 11 & \textbf{Automation Framework} & Selenium 4.22 / Python \\ \hline
-\textbf{Test Verdict} & \textbf{PASSED} & \textbf{Defect Severity} & None / Clean Execution \\ \hline
+\textbf{Field} & \textbf{Details} \\ \hline
+Project Name & ElderEarn -- Skill Sharing and Micro-Earning Platform \\ \hline
+Module Name & User Authentication \& Role-Based Access Control \\ \hline
+Test Case ID & TEST 01 \\ \hline
+Test Title & Mentor Login \& Access Authorization \\ \hline
+Test Executed By & Sobin Thankachan \\ \hline
+Execution Environment & Google Chrome / Selenium WebDriver / Windows 11 \\ \hline
+Pre-Condition & Registered senior mentor account exists in the database \\ \hline
+Description & To verify that a registered senior mentor can securely authenticate into the ElderEarn platform, access the mentor dashboard, and is prevented from accessing student-restricted pages. \\ \hline
+Test Verdict & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \caption{Formal Test Report: Test Case 1}
 \end{table}
@@ -1259,15 +1267,15 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.2cm}|J|c|}
 \hline
-\textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\ \hline
-1 & Authenticate as mentor & Dashboard loads with creation button & Mentor dashboard displayed & Pass \\ \hline
-2 & Click ``Create Course'' & Navigation to course editor form & Editor form rendered with all inputs & Pass \\ \hline
-3 & Populate course metadata & Title, category, description, and fee accepted & All fields populated validly & Pass \\ \hline
-4 & Attach video file (.mp4) & File path accepted into file input element & File attached without error & Pass \\ \hline
-5 & Click ``Publish Course'' & Multi-part upload succeeds; DB record inserted & Success alert displayed; Course ID returned & Pass \\ \hline
-6 & Search in public catalog & Course appears in catalog search results & Course card rendered and verified & Pass \\ \hline
+\textbf{Test Step} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+Authenticate as Mentor & Dashboard loads with course creation controls & Pass \\ \hline
+Navigate to Course Editor & Course creation editor renders with all input fields & Pass \\ \hline
+Populate Course Details & Title, category, description, and session fee accepted & Pass \\ \hline
+Attach Video Demonstration & Valid MP4 demonstration video attached without format errors & Pass \\ \hline
+Publish Course Form & Multi-part upload succeeds; record inserted into database & Pass \\ \hline
+Search in Public Catalog & Newly published course is immediately visible in search catalog & Pass \\ \hline
 \end{tabularx}
 \caption{Test Steps Execution: Test Case 2}
 \end{table}
@@ -1276,13 +1284,18 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|l|L{3.5cm}|}
+\begin{tabularx}{\textwidth}{|>{\bfseries}L{4.0cm}|J|}
 \hline
-\textbf{Field} & \textbf{Value} & \textbf{Field} & \textbf{Value} \\ \hline
-\textbf{Test Case ID} & \texttt{TC-SKILL-002} & \textbf{Test Module} & Skill Creation \& Video Upload \\ \hline
-\textbf{Executed By} & Sobin Thankachan & \textbf{Execution Date} & 05-September-2026 \\ \hline
-\textbf{Execution Environment} & Chrome 128 / Windows 11 & \textbf{Automation Framework} & Selenium 4.22 / Python \\ \hline
-\textbf{Test Verdict} & \textbf{PASSED} & \textbf{Defect Severity} & None / Clean Execution \\ \hline
+\textbf{Field} & \textbf{Details} \\ \hline
+Project Name & ElderEarn -- Skill Sharing and Micro-Earning Platform \\ \hline
+Module Name & Skill Course Creation \& Multimedia Upload \\ \hline
+Test Case ID & TEST 02 \\ \hline
+Test Title & Multi-Part Course Video Upload \& Catalog Listing \\ \hline
+Test Executed By & Sobin Thankachan \\ \hline
+Execution Environment & Google Chrome / Selenium WebDriver / Windows 11 \\ \hline
+Pre-Condition & Mentor is logged in and possesses valid MP4 demonstration video \\ \hline
+Description & To verify that a senior mentor can create a new skill course, upload instructional video demonstrations, and that the published offering is immediately searchable in the catalog. \\ \hline
+Test Verdict & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \caption{Formal Test Report: Test Case 2}
 \end{table}
@@ -1393,15 +1406,15 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|l|}
+\begin{tabularx}{\textwidth}{|L{4.2cm}|J|c|}
 \hline
-\textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\ \hline
-1 & Authenticate as student & Student dashboard renders & Dashboard loaded successfully & Pass \\ \hline
-2 & Check wallet balance & Current balance displayed & Balance recorded as INR 1200.00 & Pass \\ \hline
-3 & Book consultation slot & Booking modal accepts date and time & Fields accepted validly & Pass \\ \hline
-4 & Confirm booking & Course fee deducted; locked in escrow & Status changes to ESCROW\_LOCKED & Pass \\ \hline
-5 & Verify wallet ledger & Available balance decremented by 350 & Balance reduced to INR 850.00 & Pass \\ \hline
-6 & Confirm session completion & Escrow released; mentor balance credited & Mentor credited 95\%; fee retained & Pass \\ \hline
+\textbf{Test Step} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+Authenticate as Student & Student dashboard renders with current balance summary & Pass \\ \hline
+Inspect Available Balance & Balance verified prior to booking transaction & Pass \\ \hline
+Book Consultation Slot & Appointment date and time accepted by booking modal & Pass \\ \hline
+Confirm Booking \& Escrow & Course fee deducted and locked in escrow account & Pass \\ \hline
+Verify Wallet Ledger & Available balance decreased by fee; escrow balance updated & Pass \\ \hline
+Mark Session Completed & Escrow released; mentor wallet credited with 95\% payout & Pass \\ \hline
 \end{tabularx}
 \caption{Test Steps Execution: Test Case 3}
 \end{table}
@@ -1410,13 +1423,18 @@ ELDER-EARN AUTOMATED TEST EXECUTION ENGINE - CHROME WEBDRIVER
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.5cm}|l|L{3.5cm}|}
+\begin{tabularx}{\textwidth}{|>{\bfseries}L{4.0cm}|J|}
 \hline
-\textbf{Field} & \textbf{Value} & \textbf{Field} & \textbf{Value} \\ \hline
-\textbf{Test Case ID} & \texttt{TC-ESCROW-003} & \textbf{Test Module} & Escrow Booking \& Ledger Settlement \\ \hline
-\textbf{Executed By} & Sobin Thankachan & \textbf{Execution Date} & 05-September-2026 \\ \hline
-\textbf{Execution Environment} & Chrome 128 / Windows 11 & \textbf{Automation Framework} & Selenium 4.22 / Python \\ \hline
-\textbf{Test Verdict} & \textbf{PASSED} & \textbf{Defect Severity} & None / Clean Execution \\ \hline
+\textbf{Field} & \textbf{Details} \\ \hline
+Project Name & ElderEarn -- Skill Sharing and Micro-Earning Platform \\ \hline
+Module Name & Escrow Wallet Booking \& Financial Settlement \\ \hline
+Test Case ID & TEST 03 \\ \hline
+Test Title & Session Booking, Escrow Debit \& Mentor Credit \\ \hline
+Test Executed By & Sobin Thankachan \\ \hline
+Execution Environment & Google Chrome / Selenium WebDriver / Windows 11 \\ \hline
+Pre-Condition & Student has sufficient wallet balance; course is available \\ \hline
+Description & To verify that booking a mentorship session locks funds in escrow, decrements student available balance, and automatically disburses the payment to the mentor upon verified session completion. \\ \hline
+Test Verdict & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \caption{Formal Test Report: Test Case 3}
 \end{table}
@@ -1545,14 +1563,14 @@ ElderEarn delivers verifiable, multidimensional progress toward the United Natio
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|J|}
+\begin{tabularx}{\textwidth}{|L{2.0cm}|L{3.4cm}|J|L{3.6cm}|}
 \hline
-\textbf{Goal} & \textbf{Target} & \textbf{Direct Contribution Mechanism} & \textbf{Observed / Projected Impact Metric} \\ \hline
-\textbf{SDG 8} & Target 8.5: Decent work for all, including seniors & Flexible, home-based micro-consulting platform monetizing lifetime vocational wisdom & Average supplementary income of INR 4,500--8,000 per month for active senior mentors \\ \hline
-\textbf{SDG 8} & Target 8.6: Reduce youth unemployment / NEET & Highly affordable practical coaching for youth in vocational, technical, and artistic trades & 65\% reduction in learning costs compared to commercial coaching institutes \\ \hline
-\textbf{SDG 4} & Target 4.4: Relevant skills for employment & Hands-on practical mentorship in coding, taxation, repair arts, carpentry, and languages & Enhanced real-world diagnostic mastery and career confidence for apprentices \\ \hline
-\textbf{SDG 10} & Target 10.2: Promote social and economic inclusion & Eliminates ageist workplace exclusion; bridges intergenerational societal divide & Fosters mutual empathy; restores active social status to retired populations \\ \hline
-\textbf{SDG 3} & Target 3.4: Mental health and well-being & Meaningful social immersion, teaching routine, and intellectual engagement & Significant reduction in reported feelings of post-retirement loneliness and isolation \\ \hline
+\textbf{Goal} & \textbf{Target} & \textbf{Direct Contribution Mechanism} & \textbf{Observed / Projected Impact} \\ \hline
+\textbf{SDG 8} & Target 8.5: Decent work for all seniors & Flexible, home-based micro-consulting platform monetizing vocational wisdom & Average supplementary income of INR 4,500--8,000 per month for mentors \\ \hline
+\textbf{SDG 8} & Target 8.6: Reduce youth NEET & Highly affordable practical coaching in vocational, technical, and artistic trades & 65\% reduction in training costs compared to commercial institutes \\ \hline
+\textbf{SDG 4} & Target 4.4: Relevant job skills & Hands-on practical mentorship in coding, taxation, repair arts, carpentry, and languages & Enhanced real-world diagnostic mastery and career confidence \\ \hline
+\textbf{SDG 10} & Target 10.2: Promote inclusion & Eliminates ageist workplace exclusion; bridges intergenerational divide & Fosters mutual empathy; restores active social status to retirees \\ \hline
+\textbf{SDG 3} & Target 3.4: Mental health & Meaningful social immersion, teaching routine, and intellectual engagement & Significant reduction in reported feelings of post-retirement isolation \\ \hline
 \end{tabularx}
 \caption{Comprehensive SDG Impact Assessment Matrix}
 \end{table}
