@@ -1,4 +1,6 @@
 \documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{xcolor}
 % ---------------- Packages ----------------
 \usepackage{graphicx}
@@ -107,6 +109,7 @@
   \vfill
   \null
   \clearpage
+  \setcounter{section}{0}
 }
 
 % ---------------- Header & Footer ----------------
@@ -391,13 +394,14 @@ The architectural and functional scope of ElderEarn is calibrated to deliver an 
 \section{Overview of Sustainable Development Goal}
 In September 2015, the United Nations General Assembly formally adopted the 2030 Agenda for Sustainable Development, comprising 17 Sustainable Development Goals (SDGs) and 169 associated targets. This comprehensive global framework represents a universal call to action to eradicate extreme poverty, protect planetary ecosystems, foster social equity, and ensure peace and prosperity for all human populations by the year 2030. Unlike historical development frameworks that focused primarily on traditional economic metrics like Gross Domestic Product (GDP), the SDGs recognize that sustainable social development requires an integrated, multidimensional approach that balances economic prosperity, social inclusion, and environmental sustainability.
 
-A central philosophical tenet of the 2030 Agenda is the pledge to ``Leave No One Behind''. This pledge explicitly acknowledges that vulnerable, marginalized, and historically underrepresented demographics—including senior citizens, youth, persons with disabilities, and low-income communities—must be actively integrated into modern social and economic frameworks. As the world confronts rapid digitalization and demographic aging, innovative digital technologies serve as vital catalysts for realizing these global commitments. Information and Communication Technologies (ICT), when engineered with human-centric, ethical, and inclusive principles, possess the transformative capability to eliminate physical barriers, decentralize knowledge distribution, and construct resilient community-based economic paradigms.
+A central philosophical tenet of the 2030 Agenda is the pledge to ``Leave No One Behind''. This pledge explicitly acknowledges that vulnerable, marginalized, and historically underrepresented demographics---including senior citizens, youth, persons with disabilities, and low-income communities---must be actively integrated into modern social and economic frameworks. As the world confronts rapid digitalization and demographic aging, innovative digital technologies serve as vital catalysts for realizing these global commitments. Information and Communication Technologies (ICT), when engineered with human-centric, ethical, and inclusive principles, possess the transformative capability to eliminate physical barriers, decentralize knowledge distribution, and construct resilient community-based economic paradigms.
 
 \section{Selected SDG(s)}
 The ElderEarn platform is strategically designed and technically calibrated to align with four primary and intersecting Sustainable Development Goals, with particular emphasis on SDG 8 and SDG 4:
 
-\begin{figure}[H]
+\begin{table}[H]
 \centering
+\small
 \begin{tabularx}{\textwidth}{|l|L{3.2cm}|J|}
 \hline
 \textbf{Goal} & \textbf{Title} & \textbf{Direct Relevance to ElderEarn} \\ \hline
@@ -407,7 +411,7 @@ The ElderEarn platform is strategically designed and technically calibrated to a
 \textbf{SDG 3} & Good Health and Well-Being & Fosters mental stimulation, social connectivity, and personal agency among senior citizens, substantially reducing loneliness, depression, and cognitive decline. \\ \hline
 \end{tabularx}
 \caption{Alignment of ElderEarn with United Nations Sustainable Development Goals}
-\end{figure}
+\end{table}
 
 \subsection{SDG 8: Decent Work and Economic Growth}
 United Nations SDG 8 aims to ``Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.'' The global economy is confronted with the dual challenge of an aging demographic whose productive capacities are prematurely discarded, alongside high rates of youth underemployment. ElderEarn directly addresses:
@@ -467,7 +471,7 @@ A rigorous analysis of the contemporary educational, freelance, and gig-economy 
 
 \begin{enumerate}[label=\arabic*.]
     \item \textbf{Massive Open Online Course (MOOC) Platforms (e.g., Coursera, Udemy, edX):} These commercial platforms specialize in pre-recorded asynchronous video courses produced predominantly by corporate entities, academic universities, or celebrity instructors. The business model prioritizes massive scale, demanding complex digital production setups, video editing proficiency, and aggressive marketing algorithms. These requirements present insurmountable technical and financial barriers for non-technical senior citizens. Furthermore, learners on these platforms experience passive, one-way information consumption with virtually zero live personal interaction or tailored mentor guidance.
-    \item \textbf{On-Demand Physical Gig & Handyman Marketplaces (e.g., Urban Company, TaskRabbit):} While these services allow individuals to monetize skills, they focus almost exclusively on physical, on-site manual tasks such as plumbing, electrical maintenance, deep cleaning, or appliance repair. Such physically demanding labor is completely unsuitable, unsafe, and exhausting for aging senior citizens. Additionally, these platforms enforce rigid operational schedules, penalize worker inactivity, and deduct exorbitant platform commissions ranging from 20\% to 35\%.
+    \item \textbf{On-Demand Physical Gig \& Handyman Marketplaces (e.g., Urban Company, TaskRabbit):} While these services allow individuals to monetize skills, they focus almost exclusively on physical, on-site manual tasks such as plumbing, electrical maintenance, deep cleaning, or appliance repair. Such physically demanding labor is completely unsuitable, unsafe, and exhausting for aging senior citizens. Additionally, these platforms enforce rigid operational schedules, penalize worker inactivity, and deduct exorbitant platform commissions ranging from 20\% to 35\%.
     \item \textbf{Digital Freelancing Portals (e.g., Upwork, Fiverr, Freelancer):} These global platforms operate in hyper-competitive, high-stress international bidding environments dominated by full-time digital agencies and younger freelancers accustomed to cutthroat pricing and round-the-clock client turnarounds. An elderly individual seeking to share gardening wisdom, linguistic nuance, or legal principles cannot realistically compete in these high-velocity, algorithmically punishing marketplaces.
     \item \textbf{Informal Word-of-Mouth Tuition and Local Community Boards:} Historically, retired seniors offered private home tuition to neighborhood children. However, this informal mechanism is geographically restricted, lacks standardized quality benchmarks, provides no financial dispute protection, offers zero digital portfolio discovery, and fails to scale beyond immediate family acquaintances.
 \end{enumerate}
@@ -584,7 +588,7 @@ The functional specifications define the operational capabilities, procedural wo
 
 \subsection{User Authentication and Role Management}
 \begin{itemize}
-    \item \textbf{Registration and Onboarding:} Users register under designated roles—Senior Mentor or Student Learner—submitting their full name, email address, contact telephone, password, and brief biographical summary.
+    \item \textbf{Registration and Onboarding:} Users register under designated roles---Senior Mentor or Student Learner---submitting their full name, email address, contact telephone, password, and brief biographical summary.
     \item \textbf{Secure Credential Hashing:} Passwords submitted during registration or authentication are cryptographically salted and hashed using SHA-256 prior to database storage, preventing plain-text exposure in persistent records.
     \item \textbf{Session Lifecycle Management:} Upon valid credential authentication, the server establishes an HTTP session container (`HttpSession`) storing the user's unique identifier, role, and security token. Session expiration policies automatically invalidate idle sessions after 30 minutes.
     \item \textbf{Role-Based Access Control (RBAC):} Servlet filters intercept all incoming HTTP requests, inspecting session attributes to ensure that restricted mentor administration pages cannot be accessed by students, and vice versa.
@@ -615,8 +619,8 @@ The functional specifications define the operational capabilities, procedural wo
 \begin{itemize}
     \item \textbf{Dual-Ledger Digital Wallet:} Each registered user possesses a dedicated digital wallet record tracking current available balance, locked escrow balance, and total cumulative earnings.
     \item \textbf{Simulation Gateway Top-Up:} Learners can top up their digital wallet balance through a simulated secure payment gateway providing debit/credit card and UPI mock interfaces.
-    \item \textbf{Escrow Vault Locking Mechanism:} When a student books a session, the exact course tariff is immediately deducted from their available balance and placed into a locked `ESCROW_HELD` state. Neither the learner nor the mentor can withdraw this locked capital during the active booking lifecycle.
-    \item \textbf{Automated Payout Disbursement:} Following verified session delivery, the student verifies completion (or an automated timeout window expires without disputes). The system triggers an atomic database transaction transferring the funds from `ESCROW_HELD` to the mentor's withdrawable `AVAILABLE_BALANCE`, minus a minimal 5\% platform maintenance fee.
+    \item \textbf{Escrow Vault Locking Mechanism:} When a student books a session, the exact course tariff is immediately deducted from their available balance and placed into a locked \texttt{ESCROW\_HELD} state. Neither the learner nor the mentor can withdraw this locked capital during the active booking lifecycle.
+    \item \textbf{Automated Payout Disbursement:} Following verified session delivery, the student verifies completion (or an automated timeout window expires without disputes). The system triggers an atomic database transaction transferring the funds from \texttt{ESCROW\_HELD} to the mentor's withdrawable \texttt{AVAILABLE\_BALANCE}, minus a minimal 5\% platform maintenance fee.
     \item \textbf{Payout Withdrawal Requests:} Mentors can request withdrawals of their cleared micro-earnings to external bank accounts or UPI IDs, generating printable transaction receipts.
 \end{itemize}
 
@@ -649,8 +653,9 @@ ElderEarn leverages an industry-standard, battle-tested software engineering too
 \section{Module Description}
 The architecture of ElderEarn is partitioned into five tightly integrated, decoupled functional modules. This modular division enforces the software engineering principle of high cohesion and low coupling, facilitating maintainability, unit testing, and future functional scalability:
 
-\begin{figure}[H]
+\begin{table}[H]
 \centering
+\small
 \begin{tabularx}{\textwidth}{|l|L{3.5cm}|J|}
 \hline
 \textbf{Module No.} & \textbf{Module Name} & \textbf{Primary Operational Responsibilities} \\ \hline
@@ -661,7 +666,7 @@ The architecture of ElderEarn is partitioned into five tightly integrated, decou
 \textbf{Module 5} & System Administration \& Governance & Global platform monitoring, user account verification, course content moderation, dispute arbitration, and platform fee ledger auditing. \\ \hline
 \end{tabularx}
 \caption{System Module Decomposition and Responsibilities}
-\end{figure}
+\end{table}
 
 \subsection{Senior Citizen Mentor Module}
 The Senior Mentor Module serves as the primary operational gateway for retired professionals and elderly artisans. The module provides a streamlined, accessible user interface allowing mentors to:
@@ -918,7 +923,7 @@ User interface design is critical to the success of ElderEarn, given the unique 
 
 \begin{itemize}
     \item \textbf{Visual Ergonomics and Typography:} The interface utilizes a minimum base font size of 16px with proportional scaling up to 24px for subheadings and 32px for primary page headers. Typefaces with high legibility (e.g., Segoe UI, Roboto) are implemented with generous line-heights (1.6) to prevent visual fatigue among elderly mentors.
-    \item \textbf{High-Contrast Color Semantics:} High-contrast ratios ($\ge 4.5:1$) are enforced across all text and interactive buttons. Primary actions (such as ``Publish Course'', ``Approve Booking'', ``Withdraw Funds'') use unambiguous color coding—deep sapphire blues, emerald greens for success states, and warm ambers for pending alerts—ensuring immediate visual recognition.
+    \item \textbf{High-Contrast Color Semantics:} High-contrast ratios ($\ge 4.5:1$) are enforced across all text and interactive buttons. Primary actions (such as ``Publish Course'', ``Approve Booking'', ``Withdraw Funds'') use unambiguous color coding---deep sapphire blues, emerald greens for success states, and warm ambers for pending alerts---ensuring immediate visual recognition.
     \item \textbf{Forgiving and Generous Tap Targets:} Interactive form buttons, navigation links, and input elements are styled with a minimum touch dimension of $48 \times 48$ pixels, accommodating tremors, reduced motor dexterity, or touch-screen interactions common among seniors.
     \item \textbf{Explanatory Feedback and Error Prevention:} System actions that involve financial mutations or video deletions trigger explicit modal confirmation dialogues with clear plain-language explanations, eliminating accidental loss or unintended transactions.
 \end{itemize}
@@ -1436,7 +1441,7 @@ System implementation is the critical phase where theoretical software architect
 The procedural deployment of ElderEarn involves structured sequential milestones executed across development and testing environments:
 
 \subsection{Database Schema Initialization and Migration}
-The persistent foundation is established by executing comprehensive DDL scripts in MySQL 8.0. Foreign key constraints are enforced with strict referential integrity (`ON DELETE RESTRICT`, `ON UPDATE CASCADE`). Indexes are generated on frequently queried fields—such as `users.email`, `skills_courses.category`, and `wallet_transactions.txn_timestamp`—to guarantee sub-millisecond retrieval. Database user credentials are restricted through principle-of-least-privilege grant policies.
+The persistent foundation is established by executing comprehensive DDL scripts in MySQL 8.0. Foreign key constraints are enforced with strict referential integrity (\texttt{ON DELETE RESTRICT}, \texttt{ON UPDATE CASCADE}). Indexes are generated on frequently queried fields---such as \texttt{users.email}, \texttt{skills\_courses.category}, and \texttt{wallet\_transactions.txn\_timestamp}---to guarantee sub-millisecond retrieval. Database user credentials are restricted through principle-of-least-privilege grant policies.
 
 \subsection{Connection Pool Configuration}
 To prevent database connection exhaustion under concurrent user traffic, connection pooling is managed via Apache Commons DBCP / Tomcat JDBC Pool. The connection pool maintains a pool of pre-allocated database connections, recycling connections upon servlet thread completion:
@@ -1457,7 +1462,7 @@ Given that ElderEarn serves a diverse user demographic that explicitly includes 
 \subsubsection{Senior Citizen Onboarding and Digital Empowerment}
 \begin{itemize}
     \item \textbf{Step-by-Step Onboarding Wizards:} First-time senior mentors are guided through an interactive visual walkthrough explaining profile setup, microphone and webcam testing, and course publishing steps without technical jargon.
-    \item \textbf{Video Production Best Practices Guide:} Mentors receive accessible, illustrated guidelines covering basic home video recording—such as positioning the smartphone camera at eye level, ensuring front-facing window illumination, minimizing background household noise, and structuring demonstrations into concise 5-minute modules.
+    \item \textbf{Video Production Best Practices Guide:} Mentors receive accessible, illustrated guidelines covering basic home video recording---such as positioning the smartphone camera at eye level, ensuring front-facing window illumination, minimizing background household noise, and structuring demonstrations into concise 5-minute modules.
     \item \textbf{Financial Literacy and Wallet Transparency:} To dispel anxiety regarding online financial transactions, senior mentors are provided with a visual guide demonstrating how the escrow mechanism guarantees their payment, how the wallet balance updates in real time, and how funds are transferred directly to their local bank accounts.
 \end{itemize}
 
@@ -1555,7 +1560,7 @@ ElderEarn delivers verifiable, multidimensional progress toward the United Natio
 \subsection{Quantifiable Socioeconomic Outcomes}
 During pilot testing and evaluation runs, the platform recorded significant positive indicators:
 \begin{itemize}
-    \item \textbf{Intergenerational Value Exchange:} Over 40 distinct skill courses were created across categories including Traditional Horticulture, Classical Carnatic Music, Financial Literacy & Tax Planning, Woodworking & Joinery, and Python Fundamentals.
+    \item \textbf{Intergenerational Value Exchange:} Over 40 distinct skill courses were created across categories including Traditional Horticulture, Classical Carnatic Music, Financial Literacy \& Tax Planning, Woodworking \& Joinery, and Python Fundamentals.
     \item \textbf{High Mentorship Satisfaction:} Verified learner reviews demonstrated an average satisfaction score of 4.82 out of 5.0 stars, with learners emphasizing the patience, depth, and practical focus of senior mentors.
     \item \textbf{Economic Empowerment:} The escrow wallet successfully processed simulated micro-earnings that, when scaled to live community operations, offer senior citizens reliable financial autonomy for healthcare and discretionary expenditures.
 \end{itemize}
