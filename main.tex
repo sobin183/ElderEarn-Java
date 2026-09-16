@@ -352,7 +352,7 @@ ElderEarn is a web-based platform developed using Java Servlets, JavaServer Page
 
 In many families and local communities, retired seniors possess decades of hands-on experience in trades and practical disciplines such as carpentry, home electrical safety, organic farming, tailoring, cooking, basic accounting, and language tutoring. After retirement, traditional employment options sharply decrease, leaving many seniors with limited supplementary income and fewer opportunities for daily social interaction. At the same time, college students and beginners seeking practical skills are often limited to generic video tutorials on commercial portals or expensive courses that offer little personal guidance or direct feedback.
 
-ElderEarn addresses this gap by providing an accessible web application where senior mentors can list practical courses, set their own session fees, upload short demonstration videos, and schedule one-on-one sessions. Students can explore available course categories, view mentor profiles, enroll in lessons, and book appointments. The platform includes a digital wallet where session fees are held in escrow until the consultation is completed, protecting both the student and the mentor. Through this approach, ElderEarn provides senior citizens with a flexible micro-earning option from home while giving learners direct access to practical mentorship.
+ElderEarn addresses this gap by providing an accessible web application where senior mentors can list practical courses, set their own session fees, upload short demonstration videos, and schedule one-on-one sessions. Students can explore available course categories, view mentor profiles, enroll in lessons, and book appointments. The platform includes a simulated digital wallet that uses an escrow-style mechanism to hold session fees until completion, protecting both the student and the mentor. Through this approach, ElderEarn provides senior citizens with a flexible micro-earning option from home while giving learners direct access to practical mentorship.
 
 \section{Motivation}
 The motivation for developing ElderEarn comes from the Social Immersion Sustainable Development Goals (SDG) curriculum under Track 3 (Personalized Learning Tracks) at Saintgits College of Engineering. While regular academic learning focuses primarily on theory, community members outside academic institutions possess extensive practical knowledge that can be shared productively.
@@ -363,7 +363,7 @@ Key reasons for developing ElderEarn include:
   \item \textbf{Practical Knowledge Sharing:} Connecting younger students with older adults, allowing learners to receive hands-on vocational guidance while encouraging mutual respect across generations.
   \item \textbf{Affordable Learning:} Allowing students to learn practical skills at affordable rates through direct sessions and verified demonstration videos.
   \item \textbf{Accessible Interface for Older Adults:} Creating a web interface with high contrast, clear fonts, and simple navigation to make it easy for seniors to use the platform.
-  \item \textbf{Fair Transaction Handling:} Using an escrow-based digital wallet to ensure that funds are held securely until sessions are completed.
+  \item \textbf{Fair Transaction Handling:} Using an escrow-style simulated digital wallet to ensure that funds are held securely until sessions are completed.
 \end{itemize}
 
 \section{Objectives}
@@ -372,7 +372,7 @@ The primary objectives of the ElderEarn project are:
   \item \textbf{Build an Accessible Role-Based Web Application:} To design and deploy a responsive web portal supporting distinct roles for Senior Mentors, Students, and Administrators with appropriate dashboard features.
   \item \textbf{Implement Skill Course Management:} To allow senior mentors to create course listings, write syllabi, upload instructional video links, and specify hourly session fees.
   \item \textbf{Develop a Session Booking System:} To provide students with a calendar and time-slot selection tool for booking one-on-one sessions with mentors.
-  \item \textbf{Implement an Escrow Digital Wallet:} To create a transaction mechanism that holds session fees in escrow upon booking and transfers payment to the mentor after the session is conducted.
+  \item \textbf{Implement an Escrow-Style Simulated Wallet:} To create a transaction mechanism that holds session fees in escrow upon booking and transfers payment to the mentor after the session is conducted.
   \item \textbf{Provide Communication and Feedback Channels:} To include an internal messaging feature for session coordination and a 1-to-5 star rating system for service quality.
 \end{enumerate}
 
@@ -474,7 +474,7 @@ An analysis of existing online learning and freelance platforms highlights sever
 \textbf{Primary Subject Focus} & IT \& business certification & Digital freelance gigs & Practical trades, crafts, gardening \& life skills \\ \hline
 \textbf{Interaction Mode} & Pre-recorded video series & Project deliverable based & One-on-one interactive sessions \& mentor chat \\ \hline
 \textbf{Senior Accessibility} & Complex interfaces & Fast-paced workflows & High-contrast, clear fonts \& simplified steps \\ \hline
-\textbf{Payment Handling} & Upfront course fee & Milestone / project fee & Dual-ledger escrow wallet released on session confirmation \\ \hline
+\textbf{Payment Handling} & Upfront course fee & Milestone / project fee & Dual-ledger escrow-style wallet released on session confirmation \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -487,7 +487,7 @@ Key features of the proposed system include:
   \item \textbf{Senior-Friendly Interface:} Designed with usability considerations including large buttons, high-contrast colors, simple forms, and clear confirmation messages.
   \item \textbf{Course and Video Management:} Mentors can create course profiles, set hourly fees, and provide demonstration video links for students to preview.
   \item \textbf{Direct Messaging Channel:} An internal chat feature allowing students and mentors to discuss prerequisites, clarify questions, and agree on session agendas prior to meetings.
-  \item \textbf{Escrow-Style Digital Wallet:} A transaction mechanism where booked session fees are held in escrow and credited to the mentor's wallet only after the student confirms session completion.
+  \item \textbf{Escrow-Style Simulated Digital Wallet:} A transaction mechanism where booked session fees are held in escrow and credited to the mentor's wallet only after the student confirms session completion.
 \end{itemize}
 
 \section{Feasibility Study}
@@ -500,7 +500,7 @@ The economic feasibility analysis evaluated the cost of developing and running t
   \item \textbf{Modest Hosting Requirements:} The application runs efficiently on standard cloud or shared servers with modest CPU and memory specifications.
   \item \textbf{Operational Model:} A future transaction fee could be considered to support hosting and maintenance costs once the platform moves beyond the academic prototype stage.
 \end{itemize}
-Hence, the project is economically viable.
+Based on the identified development requirements, the project is economically feasible for an academic prototype.
 
 \subsection{Technical Feasibility}
 The technical feasibility examined the availability of tools and technologies:
@@ -517,7 +517,7 @@ The behavioral feasibility evaluated user adoption among seniors and students:
   \item \textbf{Adoption by Seniors:} Older adults are familiar with basic smartphone and web applications. By keeping forms simple and avoiding technical jargon, the platform enables seniors to navigate dashboards independently.
   \item \textbf{Adoption by Students:} Students are interested in affordable, one-on-one practical training directly from experienced community members.
 \end{itemize}
-The behavioral evaluation confirms strong user acceptance.
+The proposed interface and workflows are designed to support adoption by both seniors and students.
 
 % ==========================================================
 % CHAPTER 4: SYSTEM SPECIFICATION
@@ -658,13 +658,13 @@ The Student / Learner Module supports young learners in finding and enrolling in
   \item \textbf{Reviews and Ratings:} Enables students to provide 1-to-5 star ratings and reviews upon completing a session.
 \end{itemize}
 
-\subsection{Escrow Wallet and Financial Settlement Module}
-The Escrow Wallet Module manages session payments and ensures financial transparency:
+\subsection{Escrow-Style Wallet and Financial Settlement Module}
+The Escrow-Style Wallet Module manages session payments and ensures financial transparency:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Dual-Ledger Wallet Accounts:} Every registered user has a dedicated digital wallet record maintaining available and held balances.
+  \item \textbf{Dual-Ledger Wallet Accounts:} Every registered user has a dedicated simulated wallet record maintaining available and held balances.
   \item \textbf{Escrow Locking Mechanism:} When a student confirms a session booking, the required consultation fee is debited from the student's available balance and held in escrow status.
   \item \textbf{Disbursement on Confirmation:} Upon completion of the session, the student confirms delivery, prompting the system to credit the escrowed funds to the mentor's wallet.
-  \item \textbf{Dispute Resolution Hold:} If a session is cancelled or disputed, funds remain locked in escrow until reviewed by an administrator.
+  \item \textbf{Hold on Unconfirmed Sessions:} If a session is cancelled, funds remain held until status is updated.
 \end{itemize}
 
 \subsection{Direct Communication and Messaging Module}
@@ -678,9 +678,9 @@ The Messaging Module facilitates private text communication between mentors and 
 \subsection{System Administration and Governance Module}
 The Administration Module provides supervisory oversight:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{User Account Governance:} Admins can review user profiles, verify mentor credentials, and suspend abusive accounts.
+  \item \textbf{User Account Oversight:} Admins can review registered user accounts and monitor platform activity.
   \item \textbf{Content Moderation:} Monitors published courses, videos, and student reviews to ensure community safety standards.
-  \item \textbf{Financial Oversight:} Monitors escrow accounts, processes refund requests, and reviews transaction logs.
+  \item \textbf{Platform Monitoring:} Reviews course listings and monitors wallet transaction logs.
 \end{itemize}
 
 \section{Data Design}
@@ -700,7 +700,7 @@ The \texttt{users} table stores fundamental identity and authentication data for
 \texttt{user\_id} & INT & PRIMARY KEY, AUTO & Unique user identifier \\ \hline
 \texttt{name} & VARCHAR(100) & NOT NULL & Full legal name of user \\ \hline
 \texttt{email} & VARCHAR(100) & NOT NULL, UNIQUE & Login email address \\ \hline
-\texttt{password} & VARCHAR(255) & NOT NULL & SHA-256 hashed password string \\ \hline
+\texttt{password} & VARCHAR(255) & NOT NULL & Password hash stored instead of plain text \\ \hline
 \texttt{role} & VARCHAR(20) & NOT NULL & User role (\texttt{MENTOR}, \texttt{STUDENT}, \texttt{ADMIN}) \\ \hline
 \texttt{phone} & VARCHAR(20) & DEFAULT NULL & Contact telephone number \\ \hline
 \texttt{created\_at} & TIMESTAMP & DEFAULT NOW() & Account registration timestamp \\ \hline
@@ -864,9 +864,9 @@ Figure~\ref{fig:usecase} presents the UML Use Case diagram defining functional i
 
 The diagram captures three primary actor roles:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Senior Mentor Actor:} Engages with use cases including Register/Login, Create Skill Course, Upload Video Content, Manage Availability, Confirm Sessions, and Withdraw Wallet Earnings.
+  \item \textbf{Senior Mentor Actor:} Engages with use cases including Register/Login, Create Skill Course, Upload Video Content, Manage Availability, Confirm Sessions, and View Wallet Balance.
   \item \textbf{Student Learner Actor:} Interacts with Browse Catalog, View Mentor Profiles, Top-up Digital Wallet, Book Consultation Session, Chat with Mentor, and Submit Ratings.
-  \item \textbf{Administrator Actor:} Interacts with Verify Mentors, Moderate Courses, Review Transaction Logs, and Resolve User Disputes.
+  \item \textbf{Administrator Actor:} Interacts with Review User Accounts, Moderate Courses, and Monitor Platform Activity.
 \end{itemize}
 
 \subsection{Activity Diagram}
@@ -920,7 +920,7 @@ Unit testing evaluates individual software components, Servlets, and Data Access
 \textbf{Test ID} & \textbf{Component Tested} & \textbf{Test Condition} & \textbf{Expected Output} & \textbf{Status} \\ \hline
 \texttt{UT-01} & \texttt{UserDAO.register()} & Valid email, password, and role & New user record inserted & \textbf{PASSED} \\ \hline
 \texttt{UT-02} & \texttt{UserDAO.register()} & Duplicate email registration & SQLException caught, returns false & \textbf{PASSED} \\ \hline
-\texttt{UT-03} & \texttt{UserDAO.authenticate()} & Matching email and SHA-256 hash & Returns populated User bean & \textbf{PASSED} \\ \hline
+\texttt{UT-03} & \texttt{UserDAO.authenticate()} & Matching email and password hash & Returns populated User bean & \textbf{PASSED} \\ \hline
 \texttt{UT-04} & \texttt{SkillCourseDAO.add()} & Valid course title and hourly rate & Course row inserted into DB & \textbf{PASSED} \\ \hline
 \texttt{UT-05} & \texttt{WalletDAO.lockEscrow()} & Sufficient balance in student wallet & Balance debited, escrow credited & \textbf{PASSED} \\ \hline
 \texttt{UT-06} & \texttt{WalletDAO.releaseFunds()} & Valid booking confirmation & Escrow debited, mentor credited & \textbf{PASSED} \\ \hline
@@ -1232,7 +1232,7 @@ The developed ElderEarn prototype implements the main functional requirements id
   \item \textbf{Functional Web Application Delivered:} A responsive web application was implemented using Java Servlets, JSP, and MySQL, running on Apache Tomcat.
   \item \textbf{Empowered Senior Mentors:} Senior citizens can publish vocational skills, upload instructional videos, set hourly fees, and earn supplemental income from home.
   \item \textbf{Accessible Student Learning:} Students gain direct access to practical mentorship in fields like carpentry, gardening, home repairs, tailoring, and languages.
-  \item \textbf{Secure Escrow Financial Architecture:} The dual-ledger digital wallet holds funds safely, releasing session payments only after verified service delivery.
+  \item \textbf{Escrow-Style Simulated Wallet Architecture:} The dual-ledger digital wallet holds funds in escrow, releasing session payments to the mentor after verified service delivery.
   \item \textbf{Usability and Accessibility Validated:} High-contrast UI and straightforward navigation workflows were confirmed easy to use during testing.
 \end{enumerate}
 
