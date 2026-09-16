@@ -361,7 +361,7 @@ Key reasons for developing ElderEarn include:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
   \item \textbf{Supplemental Earnings for Seniors:} Providing older adults with a simple way to earn supplementary income from home through flexible, self-scheduled mentorship sessions.
   \item \textbf{Practical Knowledge Sharing:} Connecting younger students with older adults, allowing learners to receive hands-on vocational guidance while encouraging mutual respect across generations.
-  \item \textbf{Affordable Learning:} Allowing students to learn practical skills at affordable rates through direct sessions and verified demonstration videos.
+  \item \textbf{Affordable Learning:} Allowing students to learn practical skills at affordable rates through one-on-one sessions and demonstration videos.
   \item \textbf{Accessible Interface for Older Adults:} Creating a web interface with high contrast, clear fonts, and simple navigation to make it easy for seniors to use the platform.
   \item \textbf{Fair Transaction Handling:} Using an escrow-style simulated digital wallet to ensure that funds are held securely until sessions are completed.
 \end{itemize}
@@ -645,7 +645,7 @@ The Senior Citizen Mentor Module provides the interface through which older adul
   \item \textbf{Skill Course Publishing:} Provides forms where mentors create course listings with titles, syllabi, and prerequisites.
   \item \textbf{Video Tutorial Upload:} Enables mentors to attach demonstration video files or video URLs to course listings to give prospective students an overview of course content.
   \item \textbf{Schedule Setup:} Mentors configure weekly available time slots for sessions and manage incoming booking requests.
-  \item \textbf{Earnings Overview:} Displays completed sessions, escrowed payments, and available wallet balance ready for withdrawal.
+  \item \textbf{Earnings Overview:} Displays completed sessions, escrowed payments, and available wallet balance.
 \end{itemize}
 
 \subsection{Student / Learner Module}
@@ -802,7 +802,7 @@ The \texttt{wallet\_accounts} table tracks user wallet balances and escrow state
 \textbf{Column Name} & \textbf{Data Type} & \textbf{Constraints} & \textbf{Description} \\ \hline
 \texttt{wallet\_id} & INT & PRIMARY KEY, AUTO & Unique digital wallet account ID \\ \hline
 \texttt{user\_id} & INT & FOREIGN KEY, UNIQUE & References \texttt{users(user\_id)} \\ \hline
-\texttt{balance} & DECIMAL(10,2) & DEFAULT 0.00 & Available balance for bookings/withdrawal \\ \hline
+\texttt{balance} & DECIMAL(10,2) & DEFAULT 0.00 & Available balance for session transactions \\ \hline
 \texttt{escrow\_bal} & DECIMAL(10,2) & DEFAULT 0.00 & Funds locked pending session delivery \\ \hline
 \texttt{updated\_at} & TIMESTAMP & DEFAULT NOW() & Timestamp of last balance change \\ \hline
 \end{tabularx}
@@ -891,7 +891,7 @@ The operational workflow proceeds through the following sequential stages:
 \section{User Interface Design}
 The user interface design is tailored to ensure high usability for elderly users who may have declining eyesight, reduced motor precision, or limited familiarity with complex digital interfaces \cite{krug, nielsen}:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{High-Contrast Typography:} Clear typography with generous font sizing (minimum 16px body text) and strong contrast ratios compliant with WCAG 2.1 AA recommendations \cite{wcag21}.
+  \item \textbf{High-Contrast Typography:} Clear typography with readable font sizing and strong color contrast, designed with reference to WCAG 2.1 AA accessibility recommendations \cite{wcag21}.
   \item \textbf{Large Touch and Click Targets:} Generously padded buttons to accommodate tremors or imprecise mouse movements.
   \item \textbf{Linear Navigation:} Avoids multi-level dropdown menus and pop-ups, using linear step-by-step forms with immediate visual feedback.
 \end{itemize}
@@ -905,7 +905,7 @@ The user interface design is tailored to ensure high usability for elderly users
 \chaptertitlepage{SYSTEM TESTING}
 
 \section{Test Plan}
-Software testing for the ElderEarn platform was carried out to verify functional correctness, data integrity, and interface usability \cite{pressman}. Testing was structured into four levels: Unit Testing, Integration Testing, Validation Testing, and User Acceptance Testing (UAT). Manual testing was conducted for component-level verification, while Selenium WebDriver was used for browser-based end-to-end testing \cite{seleniumref}.
+Software testing for the ElderEarn platform was carried out to verify functional correctness, data integrity, and interface usability \cite{pressman}. Testing was structured into four levels: Unit Testing, Integration Testing, Validation Testing, and Persona-Based Usability Evaluation. Manual testing was conducted for component-level verification, while Selenium WebDriver was used for browser-based end-to-end testing \cite{seleniumref}.
 
 \subsection{Unit Testing}
 Unit testing evaluates individual software components, Servlets, and Data Access Object (DAO) methods in isolation to ensure that specific logical operations produce expected outcomes.
@@ -966,21 +966,21 @@ Validation testing ensures that user inputs conform to domain constraints, bound
 \end{tabularx}
 \end{table}
 
-\subsection{User Acceptance Testing}
-User Acceptance Testing (UAT) evaluated end-to-end task completion and navigation clarity using representative user personas.
+\subsection{Persona-Based Usability Evaluation}
+Persona-based usability evaluation was conducted to assess end-to-end task completion and navigation clarity using representative senior mentor and student scenarios.
 
 \begin{table}[H]
 \centering
 \small
-\caption{User Acceptance Test Scenarios}
+\caption{Persona-Based Usability Evaluation Scenarios}
 \label{tab:uat_test_cases}
 \begin{tabularx}{\textwidth}{|L{2.0cm}|L{3.0cm}|L{3.5cm}|L{2.8cm}|C{2.0cm}|}
 \hline
-\textbf{UAT ID} & \textbf{Target User Group} & \textbf{Evaluated Task} & \textbf{Acceptance Criteria} & \textbf{Status} \\ \hline
-\texttt{UAT-01} & Senior Mentor Persona & Register as mentor and publish course & Course published smoothly using simple form inputs & \textbf{PASSED} \\ \hline
-\texttt{UAT-02} & Senior Mentor Persona & Accept booking and read chat message & Clean notification and response buttons & \textbf{PASSED} \\ \hline
-\texttt{UAT-03} & Student Learner Persona & Search carpentry course and book slot & Booking request generated with clear summary & \textbf{PASSED} \\ \hline
-\texttt{UAT-04} & Student Learner Persona & Verify wallet balance top-up and escrow & Clear ledger balance breakdown displayed & \textbf{PASSED} \\ \hline
+\textbf{Scenario ID} & \textbf{Target User Group} & \textbf{Evaluated Task} & \textbf{Evaluation Criteria} & \textbf{Status} \\ \hline
+\texttt{PE-01} & Senior Mentor Persona & Register as mentor and publish course & Course published smoothly using simple form inputs & \textbf{PASSED} \\ \hline
+\texttt{PE-02} & Senior Mentor Persona & Accept booking and read chat message & Clean notification and response buttons & \textbf{PASSED} \\ \hline
+\texttt{PE-03} & Student Learner Persona & Search carpentry course and book slot & Booking request generated with clear summary & \textbf{PASSED} \\ \hline
+\texttt{PE-04} & Student Learner Persona & Verify wallet balance top-up and escrow & Clear ledger balance breakdown displayed & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -988,7 +988,7 @@ User Acceptance Testing (UAT) evaluated end-to-end task completion and navigatio
 Automated end-to-end testing was performed using Python 3 and Selenium WebDriver on Google Chrome \cite{seleniumref}. Three automated test suites were created to simulate primary user workflows.
 
 \subsection*{Test Case 1: User Authentication and Role-Based Access Control}
-This automated suite validates registration, login authentication, and role-based redirection for mentors and students.
+This automated suite validates login authentication and role-based redirection for mentors and students.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
@@ -1000,8 +1000,8 @@ driver = webdriver.Chrome()
 driver.get("http://localhost:8080/ElderEarn/login.jsp")
 
 # Step 1: Submit mentor login credentials
-driver.find_element(By.NAME, "email").send_keys("mentor_thomas@elderearn.com")
-driver.find_element(By.NAME, "password").send_keys("SecurePass123")
+driver.find_element(By.NAME, "email").send_keys("<test mentor email>")
+driver.find_element(By.NAME, "password").send_keys("<test password>")
 driver.find_element(By.ID, "loginBtn").click()
 
 # Step 2: Verify role redirection to mentor dashboard
@@ -1015,9 +1015,8 @@ driver.quit()
 [INFO] Running Automated Test Suite: Test Case 1 (Authentication & RBAC)
 [INFO] Chrome WebDriver initialized on port 9515
 [INFO] Navigating to: http://localhost:8080/ElderEarn/login.jsp
-[INFO] Input submitted: mentor_thomas@elderearn.com
+[INFO] Input submitted: <test mentor email>
 [INFO] HTTP 302 Redirect intercepted: /mentor_dashboard.jsp
-[INFO] Session cookie validated: JSESSIONID=7F9B12E48A0C22
 [PASSED] Test Case 1: Mentor authentication and role routing successful.
 \end{lstlisting}
 
@@ -1037,8 +1036,8 @@ Step 5 & Session timeout after 30 min & Inactive session invalidated (\texttt{30
 \end{tabularx}
 \end{table}
 
-\subsection*{Test Case 2: Skill Course Video Upload and Catalog Verification}
-This automated test suite verifies that a senior mentor can create a new skill course, upload curriculum data, and verify that the listing appears in the public student course catalog.
+\subsection*{Test Case 2: Skill Course Creation and Catalog Verification}
+This automated test suite verifies that a senior mentor can create a new skill course and verify that the listing appears in the student course catalog.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
@@ -1077,7 +1076,7 @@ driver.quit()
 \begin{table}[H]
 \centering
 \small
-\caption{Execution Summary: Test Case 2 (Course Upload \& Catalog Verification)}
+\caption{Execution Summary: Test Case 2 (Course Creation \& Catalog Verification)}
 \label{tab:tc2_summary}
 \begin{tabularx}{\textwidth}{|L{2.5cm}|L{4.2cm}|L{3.8cm}|C{2.5cm}|}
 \hline
@@ -1091,7 +1090,7 @@ Step 5 & Verify mentor profile rate & Displayed rate matched INR 250.00 & \textb
 \end{table}
 
 \subsection*{Test Case 3: Learner Session Booking, Escrow Debit and Settlement}
-This automated test suite verifies the financial transaction cycle: booking a session, deducting funds from the learner's available balance to escrow, and releasing the payment to the mentor upon session confirmation.
+This automated test suite verifies the financial transaction cycle: booking a session, deducting funds from the learner's available balance to escrow, and releasing the payment to the mentor after the student confirms session completion.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
@@ -1156,7 +1155,7 @@ Table~\ref{tab:test_summary} summarizes the overall verification outcomes across
 \textbf{Course Creation \& Catalog} & Automated & 5 steps & Form validation, MySQL insert, and catalog display verified. \\ \hline
 \textbf{Booking \& Escrow Wallet} & Automated & 5 steps & Wallet debit, escrow hold, and completion payout confirmed. \\ \hline
 \textbf{Form Validation \& Edge Cases} & Manual & 6 scenarios & Rejection of invalid emails, negative prices, and empty inputs. \\ \hline
-\textbf{User Persona Evaluation} & Manual & 4 scenarios & Verified usable workflows for senior mentor and student personas. \\ \hline
+\textbf{Persona-Based Usability} & Manual & 4 scenarios & Verified usable workflows for senior mentor and student scenarios. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -1169,7 +1168,7 @@ Table~\ref{tab:test_summary} summarizes the overall verification outcomes across
 \chaptertitlepage{SYSTEM IMPLEMENTATION}
 
 \section{Implementation Overview}
-The ElderEarn platform was implemented adhering to the Model-View-Controller (MVC) architectural pattern using standard Java Enterprise Edition (Java EE) components \cite{fowler, sommerville}. The presentation tier consists of JavaServer Pages (JSP) and HTML5 styled with Bootstrap 5.3 \cite{bootstrap5}; the controller tier is built using Java Servlets that handle HTTP request routing, input sanitization, and session state \cite{oracleservlets}; and the model tier is implemented with Data Access Object (DAO) classes that interact with the MySQL database via JDBC \cite{mysqlref}.
+The ElderEarn platform was implemented adhering to the Model-View-Controller (MVC) architectural pattern using standard Java Enterprise Edition (Java EE) components \cite{fowler, sommerville}. The presentation tier consists of JavaServer Pages (JSP) and HTML5 styled with Bootstrap 5.3 \cite{bootstrap5}; the controller tier is built using Java Servlets that handle HTTP request routing, input validation, and session state \cite{oracleservlets}; and the model tier is implemented with Data Access Object (DAO) classes that interact with the MySQL database via JDBC \cite{mysqlref}.
 
 Development was carried out using Eclipse IDE for Enterprise Java Developers on a local Apache Tomcat 9.0 application server. The backend logic is organized into structured packages:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
@@ -1250,7 +1249,7 @@ Table~\ref{tab:outcomes_metrics} summarizes key operational observations and SDG
 \textbf{Server Deployment} & Successful deployment & Apache Tomcat 9.0 runs servlets and JSP smoothly. \\ \hline
 \textbf{Page Response} & Fast local response & Fast response times achieved through optimized JDBC queries. \\ \hline
 \textbf{Transaction Reliability} & Atomic execution & Simulated escrow holds and payouts execute reliably in MySQL. \\ \hline
-\textbf{Interface Accessibility} & High contrast ratio & Clear fonts and high contrast assist elderly users \cite{wcag21}. \\ \hline
+\textbf{Interface Accessibility} & Designed for high contrast & Clear fonts and high contrast assist elderly users \cite{wcag21}. \\ \hline
 \textbf{SDG 8 Alignment} & Micro-Earning & Direct supplemental earning channel for retired older adults \cite{unsdg}. \\ \hline
 \textbf{SDG 4 Alignment} & Practical Skills & Affordable one-on-one vocational training for youth learners \cite{unescoskills}. \\ \hline
 \end{tabularx}
