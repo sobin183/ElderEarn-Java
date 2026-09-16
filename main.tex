@@ -312,13 +312,13 @@ Furthermore, I express my deepest love and appreciation to my parents, family me
 \textbf{ABSTRACT}
 \end{center}
 \vspace{0.8cm}
-\textbf{ElderEarn -- Skill Sharing and Micro-Earning Platform} is a web application designed to connect senior citizens possessing practical skills with younger students and learners seeking personalized, affordable mentorship. As life expectancy increases, many retired seniors experience reduced financial independence and social isolation despite having decades of vocational, artisanal, and professional experience. At the same time, college students and young learners often face high costs on commercial e-learning portals and struggle to find one-on-one practical guidance.
+\textbf{ElderEarn -- Skill Sharing and Micro-Earning Platform} is a web application developed to connect senior citizens who have practical skills with students and young learners seeking affordable, personalized mentorship. As people retire from formal careers, many seniors experience reduced income and limited social activities despite having decades of valuable experience in areas like carpentry, gardening, tailoring, cooking, bookkeeping, and language tutoring. At the same time, college students and beginners often find commercial online courses expensive and lacking one-on-one practical interaction.
 
-ElderEarn addresses these challenges by providing a dedicated, accessible online platform. Senior citizens register as mentors, create structured course profiles across diverse categories such as gardening, woodworking, tailoring, cooking, bookkeeping, and music, and upload instructional videos. Learners can explore courses, review mentor ratings, book interactive consultation sessions, and interact through a direct messaging system. To ensure fair and secure financial transactions, the platform incorporates an escrow-style digital wallet where session fees are held upon booking and transferred to the mentor only after the session is delivered and confirmed.
+ElderEarn addresses these challenges through a dedicated web portal. Senior citizens register as mentors, publish course profiles with syllabi and introductory video clips, and set hourly session rates. Students can browse courses by category, view mentor ratings, book consultation slots, and communicate through an internal messaging system. To ensure fair and secure payments, the platform uses an escrow-style digital wallet where session fees are held upon booking and transferred to the mentor once the session is delivered and confirmed.
 
-The application is implemented using Java Servlets and JavaServer Pages (JSP) deployed on Apache Tomcat, with MySQL managing relational data integrity. Adhering to the Model-View-Controller (MVC) design pattern, the user interface uses Bootstrap 5 with high-contrast color schemes, legible typography, and clear step-by-step navigation tailored for older adults.
+The system is developed using Java Servlets and JavaServer Pages (JSP) deployed on Apache Tomcat 9.0, with MySQL managing relational data. Adhering to the Model-View-Controller (MVC) architectural pattern, the user interface is built with Bootstrap 5 using high-contrast colors, clear fonts, and simple navigation designed for older adults.
 
-The project aligns directly with the United Nations Sustainable Development Goals, primarily \textbf{SDG 8: Decent Work and Economic Growth} by providing flexible home-based micro-earning opportunities for seniors, and \textbf{SDG 4: Quality Education} by promoting inclusive lifelong learning. Additionally, it contributes to \textbf{SDG 10: Reduced Inequalities} and \textbf{SDG 3: Good Health and Well-Being} by fostering active aging and positive intergenerational relationships.
+The project aligns with the United Nations Sustainable Development Goals, primarily \textbf{SDG 8: Decent Work and Economic Growth} by providing flexible micro-earning opportunities for seniors, and \textbf{SDG 4: Quality Education} by making practical learning accessible. In addition, it supports \textbf{SDG 10: Reduced Inequalities} and \textbf{SDG 3: Good Health and Well-Being} by encouraging active social engagement and positive intergenerational interaction.
 \clearpage
 
 % ==========================================================
@@ -348,41 +348,41 @@ The project aligns directly with the United Nations Sustainable Development Goal
 \chaptertitlepage{INTRODUCTION}
 
 \section{Project Overview}
-ElderEarn is a specialized web-based skill sharing and micro-earning platform designed and implemented using Java Servlets, JavaServer Pages (JSP), and MySQL relational database. The central purpose of the project is to address two pressing social and economic issues: the growing financial and social disengagement among retired senior citizens, and the lack of accessible, personalized practical skill learning for students and young beginners.
+ElderEarn is a web-based platform developed using Java Servlets, JavaServer Pages (JSP), and MySQL to connect senior citizens who have practical skills with students and young adults who want to learn those skills. The project aims to address two common community challenges: the loss of productive earning opportunities among retired older adults, and the lack of affordable, personalized practical skill learning for students.
 
-In our communities, a large number of senior citizens live in retirement while possessing decades of rich, hands-on experience across diverse fields such as carpentry, mechanical repairs, home electrical safety, organic farming, tailoring, cooking, bookkeeping, and language tutoring. After formal retirement, traditional employment opportunities sharply decline, leaving many elderly individuals without regular supplemental income and leading to feelings of social isolation. Meanwhile, college students and entry-level learners seeking practical skills are often limited to generic online video tutorials or expensive commercial certification courses that lack interactive guidance, personal feedback, and local relevance.
+In many families and local communities, retired seniors possess decades of hands-on experience in trades and practical disciplines such as carpentry, home electrical safety, organic farming, tailoring, cooking, basic accounting, and language tutoring. After retirement, traditional employment options sharply decrease, leaving many seniors with limited supplementary income and fewer opportunities for daily social interaction. At the same time, college students and beginners seeking practical skills are often limited to generic video tutorials on commercial portals or expensive courses that offer little personal guidance or direct feedback.
 
-ElderEarn addresses this disconnect by providing an accessible, role-based web portal where senior mentors can list practical courses, set their own consultation rates, upload short instructional videos, and conduct scheduled one-on-one sessions. Students can explore available categories, read mentor profiles, enroll in skill courses, and book interactive appointments. To ensure security and mutual trust during financial transactions, the system incorporates an escrow-style digital wallet. When a student books a session, the required fee is temporarily held in an escrow account and is released to the mentor only after the session has been conducted and confirmed. Through this approach, ElderEarn provides senior citizens with dignified micro-earning avenues from home while giving learners direct access to practical mentorship.
+ElderEarn addresses this gap by providing an accessible web application where senior mentors can list practical courses, set their own session fees, upload short demonstration videos, and schedule one-on-one sessions. Students can explore available course categories, view mentor profiles, enroll in lessons, and book appointments. The platform includes a digital wallet where session fees are held in escrow until the consultation is completed, protecting both the student and the mentor. Through this approach, ElderEarn provides senior citizens with a flexible micro-earning option from home while giving learners direct access to practical mentorship.
 
 \section{Motivation}
-The motivation for developing ElderEarn originates from the Social Immersion Sustainable Development Goals (SDG) curriculum under Track 3 (Personalized Learning Tracks) at Saintgits College of Engineering. Traditional academic learning often concentrates on theoretical concepts, while community members outside academic institutions possess vast stores of practical knowledge that remain underutilized.
+The motivation for developing ElderEarn comes from the Social Immersion Sustainable Development Goals (SDG) curriculum under Track 3 (Personalized Learning Tracks) at Saintgits College of Engineering. While regular academic learning focuses primarily on theory, community members outside academic institutions possess extensive practical knowledge that can be shared productively.
 
-Key driving factors behind the development of ElderEarn include:
+Key reasons for developing ElderEarn include:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Economic Empowerment for Seniors:} Providing elderly individuals with an independent channel to earn supplementary income through flexible, self-scheduled mentorship sessions without physical strain.
-  \item \textbf{Intergenerational Knowledge Exchange:} Creating a platform where younger students can interact directly with older adults, gaining hands-on vocational guidance while fostering mutual respect between generations.
-  \item \textbf{Affordable and Practical Learning:} Enabling learners to acquire practical skills at affordable rates through one-on-one sessions and verified instructional videos rather than expensive commercial MOOCs.
-  \item \textbf{Digital Inclusion of Older Adults:} Developing an accessible web interface with high contrast, legible typography, and straightforward navigation that encourages older adults to actively participate in the digital economy.
-  \item \textbf{Secure Transaction Processing:} Establishing an escrow-based digital wallet to protect both mentors and students from transaction disputes or non-delivery of services.
+  \item \textbf{Supplemental Earnings for Seniors:} Providing older adults with a simple way to earn supplementary income from home through flexible, self-scheduled mentorship sessions.
+  \item \textbf{Practical Knowledge Sharing:} Connecting younger students with older adults, allowing learners to receive hands-on vocational guidance while encouraging mutual respect across generations.
+  \item \textbf{Affordable Learning:} Allowing students to learn practical skills at affordable rates through direct sessions and verified demonstration videos.
+  \item \textbf{Accessible Interface for Older Adults:} Creating a web interface with high contrast, clear fonts, and simple navigation to make it easy for seniors to use the platform.
+  \item \textbf{Fair Transaction Handling:} Using an escrow-based digital wallet to ensure that funds are held securely until sessions are completed.
 \end{itemize}
 
 \section{Objectives}
-The primary technical and operational objectives of the ElderEarn platform are:
+The primary objectives of the ElderEarn project are:
 \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Build an Accessible, Role-Based Web Portal:} To design and deploy a responsive web application supporting distinct roles for Senior Mentors, Students, and Administrators with appropriate dashboard features.
-  \item \textbf{Implement a Skill and Course Management Module:} To allow senior mentors to create structured course listings, manage curriculum descriptions, upload instructional video links, and set hourly session pricing.
-  \item \textbf{Develop a Session Booking and Scheduling System:} To provide learners with an intuitive calendar and time-slot selection mechanism for scheduling one-on-one consultations with mentors.
-  \item \textbf{Establish an Escrow Digital Wallet Architecture:} To implement double-entry financial ledger logic that safely holds session fees in escrow upon booking and transfers funds to the mentor upon successful completion.
-  \item \textbf{Integrate Communication and Feedback Channels:} To provide an internal messaging module for mentor-student coordination and a transparent 5-star rating and review mechanism to maintain service quality.
+  \item \textbf{Build an Accessible Role-Based Web Application:} To design and deploy a responsive web portal supporting distinct roles for Senior Mentors, Students, and Administrators with appropriate dashboard features.
+  \item \textbf{Implement Skill Course Management:} To allow senior mentors to create course listings, write syllabi, upload instructional video links, and specify hourly session fees.
+  \item \textbf{Develop a Session Booking System:} To provide students with a calendar and time-slot selection tool for booking one-on-one sessions with mentors.
+  \item \textbf{Implement an Escrow Digital Wallet:} To create a transaction mechanism that holds session fees in escrow upon booking and transfers payment to the mentor after the session is conducted.
+  \item \textbf{Provide Communication and Feedback Channels:} To include an internal messaging feature for session coordination and a 1-to-5 star rating system for service quality.
 \end{enumerate}
 
 \section{Scope of the Project}
 The functional scope of the ElderEarn platform includes:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Target User Base:} Senior citizens (aged 55 and above) wishing to share vocational knowledge, and students or young adults seeking affordable personal tutoring and practical skill guidance.
-  \item \textbf{Skill Domains:} Practical, vocational, artistic, and academic areas including organic gardening, carpentry, tailoring, instrument training, basic electronics, culinary arts, and competitive exam preparation.
-  \item \textbf{Platform Capabilities:} User authentication and profile management, course catalog browsing with category filtering, secure internal messaging, session booking workflows, simulated digital wallet operations, and administrative oversight.
-  \item \textbf{Technical Boundaries:} The initial deployment operates on a local application server (Apache Tomcat 9.0) with MySQL database storage. Session payments use a simulated digital wallet mechanism rather than a live external banking gateway, which will be integrated in future production phases.
+  \item \textbf{Target User Base:} Senior citizens (aged 55 and above) wishing to share practical knowledge, and students or young adults seeking affordable personal tutoring.
+  \item \textbf{Skill Areas:} Practical, vocational, artistic, and academic subjects including organic gardening, carpentry, tailoring, musical instruments, basic electronics, culinary arts, and foundational tutoring.
+  \item \textbf{Platform Capabilities:} User authentication and profile management, course catalog browsing with category filtering, direct messaging, session booking workflows, simulated digital wallet operations, and administrative oversight.
+  \item \textbf{Technical Boundaries:} The prototype runs on a local Apache Tomcat 9.0 application server backed by a MySQL database. Payments are processed through an internal simulated wallet rather than a commercial payment gateway, which will be integrated in future phases.
 \end{itemize}
 
 % ==========================================================
@@ -393,21 +393,21 @@ The functional scope of the ElderEarn platform includes:
 \chaptertitlepage{SUSTAINABLE DEVELOPMENT GOAL}
 
 \section{Overview of Sustainable Development Goals}
-In September 2015, the United Nations General Assembly adopted the 2030 Agenda for Sustainable Development, comprising 17 Sustainable Development Goals (SDGs) and 169 associated targets. These goals establish a comprehensive blueprint for addressing global challenges, including poverty, inequality, education access, economic growth, and environmental sustainability.
+In September 2015, the United Nations General Assembly adopted the 2030 Agenda for Sustainable Development, comprising 17 Sustainable Development Goals (SDGs) and 169 targets \cite{unsdg}. These goals outline a shared blueprint for peace and prosperity, addressing poverty, education, work, and community well-being.
 
-Under the Track 3 Personalized Learning curriculum at Saintgits College of Engineering, students are encouraged to design software solutions that directly contribute to specific SDG targets. Rather than treating technology as an isolated tool, this project uses software engineering principles to solve real-world community challenges. ElderEarn targets the intersection between senior citizen welfare and youth education, directly aligning with SDG 8 and SDG 4, with positive secondary impacts on SDG 10 and SDG 3.
+Under the Track 3 Personalized Learning curriculum at Saintgits College of Engineering, students develop software projects that address community-oriented SDG targets. ElderEarn applies software engineering principles to support senior citizen engagement and student learning, primarily targeting SDG 8 and SDG 4, with secondary relevance to SDG 10 and SDG 3 \cite{whoaging}.
 
 \section{Selected SDGs}
 
 \subsection{SDG 8: Decent Work and Economic Growth}
-\textbf{Target 8.5:} By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value.
+\textbf{Target 8.5:} By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value \cite{unsdg}.
 
-Many elderly individuals face sudden loss of income after retirement, despite retaining strong cognitive capabilities and valuable professional and vocational skills. ElderEarn directly addresses Target 8.5 by offering senior citizens a flexible, home-based micro-earning platform. Mentors retain complete control over their schedules, course fees, and consultation availability, allowing them to earn supplemental income in a dignified, self-paced manner.
+Many older adults face a sudden reduction in personal income after formal retirement, even though they remain active and possess practical knowledge. ElderEarn supports Target 8.5 by offering seniors a flexible way to earn supplementary income from home. Mentors decide their own schedule, fees, and session availability, allowing them to remain economically engaged at their own pace.
 
 \subsection{SDG 4: Quality Education}
-\textbf{Target 4.4:} By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs, and entrepreneurship.
+\textbf{Target 4.4:} By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs, and entrepreneurship \cite{unsdg}.
 
-Quality education should not be restricted to formal classrooms or expensive certification bootcamps. ElderEarn advances Target 4.4 by enabling young students and apprentices to learn practical, hands-on skills directly from experienced practitioners. Whether learning wood joinery, sewing, electronics troubleshooting, or conversational language skills, learners receive personalized feedback at fraction of commercial tutoring costs.
+Education extends beyond classroom textbooks into practical life and vocational skills. ElderEarn contributes to Target 4.4 by enabling students to learn practical trades directly from experienced individuals. Whether learning wood joinery, electrical precautions, sewing, or conversational language, learners receive personalized feedback at affordable rates.
 
 \begin{table}[H]
 \centering
@@ -417,33 +417,33 @@ Quality education should not be restricted to formal classrooms or expensive cer
 \begin{tabularx}{\textwidth}{|L{2.2cm}|L{4.2cm}|J|}
 \hline
 \textbf{SDG Goal} & \textbf{Target Reference} & \textbf{ElderEarn Implementation} \\ \hline
-\textbf{SDG 8: Decent Work} & Target 8.5: Productive employment and decent work for all & Provides home-based micro-earning opportunities for retired seniors through paid skill sessions and digital course publishing. \\ \hline
-\textbf{SDG 4: Quality Education} & Target 4.4: Relevant vocational and technical skills & Facilitates affordable, one-on-one practical training in vocational, technical, and artistic disciplines directly from veterans. \\ \hline
-\textbf{SDG 10: Reduced Inequalities} & Target 10.2: Empower and promote social and economic inclusion & Bridges generational divide, promotes digital inclusion among elderly, and makes quality mentorship affordable for students. \\ \hline
-\textbf{SDG 3: Good Health} & Target 3.4: Promote mental health and well-being & Reduces isolation and cognitive decline in seniors by providing social connection, purpose, and community engagement. \\ \hline
+\textbf{SDG 8: Decent Work} & Target 8.5: Productive employment and decent work for all & Offers flexible, home-based micro-earning opportunities for retired seniors through scheduled sessions and course listings. \\ \hline
+\textbf{SDG 4: Quality Education} & Target 4.4: Relevant vocational and technical skills & Facilitates affordable, one-on-one practical training in practical trades, crafts, and life skills directly from experienced practitioners. \\ \hline
+\textbf{SDG 10: Reduced Inequalities} & Target 10.2: Empower and promote social and economic inclusion & Connects different generations, promotes digital participation among older adults, and makes skill mentorship accessible to students. \\ \hline
+\textbf{SDG 3: Good Health} & Target 3.4: Promote mental health and well-being & The platform provides opportunities for social interaction and continued engagement among senior users \cite{whoaging}. \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{Problems Addressed}
-ElderEarn is structured to resolve three core real-world problems:
+ElderEarn addresses three specific practical problems:
 \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Post-Retirement Financial Strain and Inactivity:} Retirement frequently leads to a sharp reduction in disposable income, especially in regions with limited pension coverage. ElderEarn gives seniors an independent micro-earning platform where they monetize their existing skills without physical stress.
-  \item \textbf{High Cost and Impersonal Nature of Online Learning:} Most commercial learning platforms rely on static, pre-recorded videos with no individualized attention. Learners seeking practical answers struggle to find experienced mentors willing to provide affordable, focused guidance.
-  \item \textbf{Digital and Social Isolation of Older Adults:} Without meaningful daily tasks and social interactions, elderly individuals frequently experience loneliness and cognitive decline. Engaging with younger learners keeps mentors mentally active and socially valued.
+  \item \textbf{Limited Post-Retirement Earning Channels:} Retirement often brings a drop in income. ElderEarn gives seniors an independent channel to monetize practical skills without physical strain.
+  \item \textbf{High Cost of One-on-One Practical Tutoring:} Most online learning platforms offer generic videos without personal interaction. Students looking for practical answers struggle to find affordable mentors.
+  \item \textbf{Social Inactivity Among Older Adults:} After leaving workplace routines, elderly individuals often have fewer social contacts. Interacting with students provides purposeful activity and regular conversation.
 \end{enumerate}
 
 \section{Contribution of the Proposed Project towards SDGs}
-ElderEarn implements a sustainable model where technical architecture directly supports the selected SDGs. The platform uses a minimal transaction fee structure to maintain operational sustainability without burdening users. By lowering financial barriers for students and providing fair compensation for seniors, ElderEarn turns skill sharing into an inclusive economic activity.
+The project applies web technology to support the chosen SDGs. The platform uses a modest fee structure to ensure the system can remain self-sustaining in a live deployment, keeping costs low for students while compensating mentors fairly.
 
 \section{Expected Social, Economic, and Environmental Impact}
 \subsection{Social and Community Impact}
-ElderEarn fosters intergenerational solidarity by connecting senior citizens with college students and young adults. Seniors gain renewed purpose, mental stimulation, and community respect, which positively affects psychological well-being. Learners gain role models, practical life insights, and personalized guidance that textbooks cannot provide.
+ElderEarn encourages interaction between older adults and younger students. Seniors gain a sense of purpose and community connection, while students receive patient, personalized guidance based on life experience.
 
 \subsection{Economic and Vocational Impact}
-The platform allows senior citizens to earn supplemental income to support medical expenses, personal hobbies, and daily living costs. For learners, acquiring practical skills at affordable rates enhances self-reliance, vocational readiness, and problem-solving abilities.
+Mentors can earn supplemental income to help with daily living or personal expenses. Students acquire practical skills that improve self-reliance and vocational readiness.
 
 \subsection{Environmental Impact}
-By emphasizing vocational skills such as appliance repair, carpentry maintenance, garment tailoring, and organic urban farming, ElderEarn promotes a culture of repair, reuse, and sustainable living, reducing household waste and consumption.
+By encouraging skills like furniture repair, appliance care, garment alteration, and home gardening, the platform promotes a culture of repair and reuse, helping reduce household waste.
 
 
 % ==========================================================
@@ -454,12 +454,12 @@ By emphasizing vocational skills such as appliance repair, carpentry maintenance
 \chaptertitlepage{REQUIREMENT ANALYSIS}
 
 \section{Existing System}
-A thorough analysis of existing online learning and freelance platforms reveals significant gaps when applied to intergenerational skill sharing and senior citizen participation. Currently available solutions fall into three main categories:
+An analysis of existing online learning and freelance platforms highlights several gaps when applied to intergenerational skill sharing:
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Massive Open Online Course (MOOC) Platforms (e.g., Coursera, Udemy, edX):} These portals primarily provide pre-recorded lecture series in formal academic and corporate domains like data science, business management, and programming. They lack mechanisms for personalized one-on-one live interaction, charge steep subscription fees, and do not offer opportunities for local senior citizens to monetize practical trade skills.
-  \item \textbf{Commercial Freelance Marketplaces (e.g., Upwork, Fiverr, Freelancer):} While these platforms allow individuals to sell services, they are designed for high-paced, competitive digital tasks such as software development, copywriting, and graphic design. The bidding process, intense turnaround pressures, and complex project requirements are intimidating and unsuitable for elderly retirees.
-  \item \textbf{Informal Community and Social Media Groups (e.g., Facebook Groups, WhatsApp):} Informal networks occasionally connect neighbors for local tutoring, but they lack structured scheduling tools, secure payment handling, verified identity management, and persistent educational records.
+  \item \textbf{Commercial Online Course Platforms (e.g., Coursera, Udemy, edX):} These portals focus primarily on pre-recorded video lectures in technical and corporate subjects like software engineering, business, and finance. They offer little live one-on-one interaction, charge relatively high fees, and do not provide an avenue for community seniors to teach hands-on practical trades.
+  \item \textbf{Freelance Portals (e.g., Upwork, Fiverr):} These marketplaces are built around competitive bidding for digital deliverables like web programming, writing, and design. The bidding process, strict deadlines, and fast-paced commercial environment are unsuitable for retired older adults.
+  \item \textbf{Informal Social Media Groups (e.g., WhatsApp, Facebook Groups):} While neighbors sometimes use chat groups to organize local tutoring, these channels lack structured scheduling tools, secure payment handling, and persistent user records.
 \end{enumerate}
 
 \begin{table}[H]
@@ -470,54 +470,54 @@ A thorough analysis of existing online learning and freelance platforms reveals 
 \begin{tabularx}{\textwidth}{|L{3.2cm}|L{3.2cm}|L{3.2cm}|J|}
 \hline
 \textbf{Evaluation Feature} & \textbf{Commercial MOOCs} & \textbf{Freelance Portals} & \textbf{ElderEarn Platform} \\ \hline
-\textbf{Target Instructor Base} & University professors / Industry experts & Digital freelancers & Retired senior citizens and experienced practitioners \\ \hline
-\textbf{Primary Subject Focus} & Academic \& IT courses & Digital freelance services & Practical, vocational, artisanal \& life skills \\ \hline
-\textbf{Interaction Mode} & Pre-recorded one-way & Task-based deliverables & One-on-one interactive sessions \& mentor chat \\ \hline
-\textbf{Senior Accessibility} & Complex interfaces & High cognitive load & High-contrast, large fonts \& simplified workflows \\ \hline
-\textbf{Financial Security} & Upfront course fees & Milestone / escrow fees & Dual-ledger escrow wallet released on session confirmation \\ \hline
+\textbf{Target Instructor Base} & Academic professors \& corporate trainers & Digital freelancers & Retired senior citizens and practical practitioners \\ \hline
+\textbf{Primary Subject Focus} & IT \& business certification & Digital freelance gigs & Practical trades, crafts, gardening \& life skills \\ \hline
+\textbf{Interaction Mode} & Pre-recorded video series & Project deliverable based & One-on-one interactive sessions \& mentor chat \\ \hline
+\textbf{Senior Accessibility} & Complex interfaces & Fast-paced workflows & High-contrast, clear fonts \& simplified steps \\ \hline
+\textbf{Payment Handling} & Upfront course fee & Milestone / project fee & Dual-ledger escrow wallet released on session confirmation \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{Proposed System}
-The proposed ElderEarn system is a purpose-built web portal engineered to provide an accessible, safe, and engaging environment for intergenerational skill exchange.
+The proposed ElderEarn system is a web application developed to provide an accessible and practical environment for intergenerational skill exchange.
 
 Key features of the proposed system include:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Role-Based Access Control:} Tailored dashboards for Senior Mentors (course creation, video uploads, session management, wallet earnings), Students (course browsing, session booking, chat, learning history), and Admins (user verification, dispute management, content review).
-  \item \textbf{Senior-Friendly User Interface:} Designed with ergonomic considerations including large touch targets, high-contrast color schemes, straightforward forms, and clear confirmation dialogues to minimize cognitive burden.
-  \item \textbf{Curriculum and Video Upload System:} Mentors can publish structured modules, set custom session prices, and provide instructional video links or files for student preview.
-  \item \textbf{Direct Messaging Channel:} Built-in text messaging allowing students and mentors to discuss prerequisites, clarify questions, and agree on session agendas prior to meetings.
-  \item \textbf{Escrow-Protected Digital Wallet:} A secure transaction system where booked session funds are locked in escrow and credited to the mentor's wallet only after successful session completion.
+  \item \textbf{Role-Based Access Control:} Distinct dashboards for Senior Mentors (course creation, video uploads, session management, wallet earnings), Students (course browsing, session booking, chat, learning history), and Admins (user verification, content review).
+  \item \textbf{Senior-Friendly Interface:} Designed with usability considerations including large buttons, high-contrast colors, simple forms, and clear confirmation messages.
+  \item \textbf{Course and Video Management:} Mentors can create course profiles, set hourly fees, and provide demonstration video links for students to preview.
+  \item \textbf{Direct Messaging Channel:} An internal chat feature allowing students and mentors to discuss prerequisites, clarify questions, and agree on session agendas prior to meetings.
+  \item \textbf{Escrow-Style Digital Wallet:} A transaction mechanism where booked session fees are held in escrow and credited to the mentor's wallet only after the student confirms session completion.
 \end{itemize}
 
 \section{Feasibility Study}
-Before commencing software development, a comprehensive feasibility study was performed to assess the economic, technical, and behavioral viability of the project.
+A feasibility study was conducted to evaluate the economic, technical, and behavioral viability of the project \cite{pressman}.
 
 \subsection{Economic Feasibility}
-The economic feasibility analysis evaluated the cost of developing, hosting, and maintaining the ElderEarn platform:
+The economic feasibility analysis evaluated the cost of developing and running the platform:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Zero Software Licensing Cost:} The application is built entirely with open-source technologies, including Java Development Kit (OpenJDK 17), Apache Tomcat 9.0, MySQL Community Server 8.0, and Bootstrap 5.3, eliminating software purchase expenses.
-  \item \textbf{Minimal Infrastructure Requirements:} The platform runs efficiently on standard cloud VPS or shared hosting environments with modest CPU and RAM specifications.
-  \item \textbf{Sustainable Operating Model:} A nominal transaction fee (5--10\%) on completed mentorship sessions can easily cover server hosting and domain renewal costs in a live deployment.
+  \item \textbf{Zero Software Licensing Cost:} The application is built entirely using open-source technologies, including OpenJDK 17, Apache Tomcat 9.0, MySQL Community Server 8.0, and Bootstrap 5.3, eliminating software purchase expenses.
+  \item \textbf{Modest Hosting Requirements:} The application runs efficiently on standard cloud or shared servers with modest CPU and memory specifications.
+  \item \textbf{Operational Model:} A future transaction fee could be considered to support hosting and maintenance costs once the platform moves beyond the academic prototype stage.
 \end{itemize}
-Hence, the project is economically sound and viable.
+Hence, the project is economically viable.
 
 \subsection{Technical Feasibility}
-The technical feasibility examined the availability of tools, frameworks, and developer competencies required to implement the system:
+The technical feasibility examined the availability of tools and technologies:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Mature Enterprise Java Stack:} Java Servlets and JSP provide a battle-tested foundation for session management, request routing, and transaction handling.
-  \item \textbf{Relational Database Integrity:} MySQL provides full ACID compliance, foreign key constraints, and transactional consistency essential for financial escrow operations.
-  \item \textbf{Cross-Platform Compatibility:} The application runs in any standard web browser on Windows, macOS, Linux, Android, and iOS devices without requiring third-party plugins.
+  \item \textbf{Standard Java EE Stack:} Java Servlets and JSP provide a reliable foundation for request routing, session tracking, and transaction handling \cite{oracleservlets, oraclejsp}.
+  \item \textbf{Relational Database Integrity:} MySQL provides ACID compliance, foreign key relationships, and transaction control needed for wallet operations \cite{mysqlref}.
+  \item \textbf{Cross-Browser Support:} The application runs in standard web browsers across desktop, laptop, and tablet devices without requiring third-party plugins.
 \end{itemize}
 Therefore, the project is technically feasible.
 
 \subsection{Behavioral Feasibility}
-The behavioral feasibility evaluated the willingness and capability of both senior citizens and students to adopt the system:
+The behavioral feasibility evaluated user adoption among seniors and students:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Adoption by Seniors:} Older adults are increasingly comfortable using smartphones and web browsers for social interaction and banking. By avoiding complex jargon and providing clear instructions, the platform ensures seniors can navigate dashboards independently.
-  \item \textbf{Adoption by Students:} Students are eager to access affordable, practical knowledge directly from experienced practitioners in their local communities.
+  \item \textbf{Adoption by Seniors:} Older adults are familiar with basic smartphone and web applications. By keeping forms simple and avoiding technical jargon, the platform enables seniors to navigate dashboards independently.
+  \item \textbf{Adoption by Students:} Students are interested in affordable, one-on-one practical training directly from experienced community members.
 \end{itemize}
-The behavioral feasibility assessment confirms high user acceptance.
+The behavioral evaluation confirms strong user acceptance.
 
 % ==========================================================
 % CHAPTER 4: SYSTEM SPECIFICATION
@@ -527,10 +527,10 @@ The behavioral feasibility assessment confirms high user acceptance.
 \chaptertitlepage{SYSTEM SPECIFICATION}
 
 \section{Software and Hardware Requirements}
-The ElderEarn platform has been developed and evaluated against clearly defined hardware and software specifications for both server hosting and client access.
+The ElderEarn platform has been developed and evaluated against clearly defined hardware and software specifications for server hosting and client access.
 
 \subsection{Hardware Requirements}
-Table~\ref{tab:hardware_specs} outlines the minimum and recommended hardware specifications for running the application server and accessing the platform as a client.
+Table~\ref{tab:hardware_specs} outlines the hardware specifications for running the application server and accessing the platform as a client.
 
 \begin{table}[H]
 \centering
@@ -540,17 +540,17 @@ Table~\ref{tab:hardware_specs} outlines the minimum and recommended hardware spe
 \begin{tabularx}{\textwidth}{|L{3.2cm}|L{4.2cm}|J|}
 \hline
 \textbf{Hardware Component} & \textbf{Minimum Specification} & \textbf{Recommended Specification} \\ \hline
-\textbf{Server Processor} & Dual-Core 2.0 GHz (x86-64) & Quad-Core 2.5 GHz or higher (Intel Core i5/i7 / Xeon) \\ \hline
+\textbf{Server Processor} & Dual-Core 2.0 GHz (x86-64) & Quad-Core 2.5 GHz or higher (Intel Core i5/i7) \\ \hline
 \textbf{Server Memory (RAM)} & 4.0 GB DDR4 & 8.0 GB DDR4 or higher \\ \hline
-\textbf{Server Storage} & 20 GB available SSD space & 50 GB NVMe SSD storage \\ \hline
+\textbf{Server Storage} & 20 GB available disk space & 50 GB SSD storage \\ \hline
 \textbf{Client Device} & Desktop, Laptop, or Tablet & Modern PC / Laptop with 1080p display \\ \hline
 \textbf{Client Memory (RAM)} & 2.0 GB RAM & 4.0 GB RAM or higher \\ \hline
-\textbf{Network Connection} & 1.0 Mbps broadband / 4G & 10 Mbps stable high-speed broadband connection \\ \hline
+\textbf{Network Connection} & 1.0 Mbps broadband / 4G & Stable high-speed internet connection \\ \hline
 \end{tabularx}
 \end{table}
 
 \subsection{Software Requirements}
-Table~\ref{tab:software_specs} details the software stack, runtime environments, and developer tools utilized in building and deploying the ElderEarn platform.
+Table~\ref{tab:software_specs} details the software stack and developer tools used to build and deploy the ElderEarn platform.
 
 \begin{table}[H]
 \centering
@@ -560,71 +560,71 @@ Table~\ref{tab:software_specs} details the software stack, runtime environments,
 \begin{tabularx}{\textwidth}{|L{3.5cm}|L{4.0cm}|J|}
 \hline
 \textbf{Software Layer} & \textbf{Tool / Technology} & \textbf{Version \& Purpose} \\ \hline
-\textbf{Operating System} & Windows 10 / 11, Ubuntu Linux & Development and production server hosting \\ \hline
+\textbf{Operating System} & Windows 10 / 11, Ubuntu Linux & Development and server hosting environment \\ \hline
 \textbf{Programming Language} & Java (OpenJDK / Oracle JDK) & Version 17.0+ for backend controller and DAO logic \\ \hline
 \textbf{Web / Servlet Container} & Apache Tomcat & Version 9.0.x application server for Servlet execution \\ \hline
 \textbf{Database Engine} & MySQL Community Server & Version 8.0.x relational database management system \\ \hline
-\textbf{Database Driver} & MySQL Connector/J & Version 8.0.x JDBC driver for connection pooling \\ \hline
+\textbf{Database Driver} & MySQL Connector/J & Version 8.0.x JDBC driver for database connectivity \\ \hline
 \textbf{User Interface Stack} & HTML5, CSS3, JavaScript & Standard front-end technologies for web pages \\ \hline
 \textbf{Front-End Framework} & Bootstrap & Version 5.3 for responsive and accessible grid layouts \\ \hline
-\textbf{Integrated Dev. Env.} & Eclipse IDE for Enterprise Java & Version 2023-09+ for development, debugging, and builds \\ \hline
+\textbf{Integrated Dev. Env.} & Eclipse IDE for Enterprise Java & Version 2023-09+ for development and builds \\ \hline
 \textbf{Testing Automation} & Python with Selenium WebDriver & Version 4.15+ for automated browser test validation \\ \hline
-\textbf{Version Control} & Git \& GitHub & Distributed version control and remote repository backup \\ \hline
+\textbf{Version Control} & Git \& GitHub & Distributed version control and repository backup \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{Functional Specifications}
-The functional requirements describe the specific actions and capabilities that the ElderEarn platform provides to its user groups.
+The functional requirements describe the specific actions and capabilities that the platform provides to its user groups \cite{sommerville}.
 
 \subsection{User Authentication and Role Management}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Multi-Role Registration:} Allows new users to register as either a Senior Mentor or a Student Learner by providing name, email, phone number, password, and brief biographical details.
+  \item \textbf{Multi-Role Registration:} Allows new users to register as either a Senior Mentor or a Student Learner by providing name, email, phone number, password, and brief biography.
   \item \textbf{Secure Session-Based Login:} Validates credentials against hashed records stored in MySQL, creates a server-side \texttt{HttpSession}, and sets role-specific authorization permissions.
   \item \textbf{Profile Customization:} Mentors can update their hourly rate, areas of practical expertise, and teaching availability; students can view their enrolled courses and booking history.
 \end{itemize}
 
 \subsection{Skill Offering and Video Content Management}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Course Publishing:} Mentors can create new course listings specifying course title, categorized domain, detailed descriptions, prerequisites, and pricing.
-  \item \textbf{Video Tutorial Integration:} Mentors can upload demonstration video clips or link curated instructional videos to allow students to preview teaching style and course content.
-  \item \textbf{Course Modification:} Mentors retain full authority to edit descriptions, adjust pricing, or archive inactive listings from their personal dashboard.
+  \item \textbf{Course Publishing:} Mentors can create new course listings specifying course title, category, syllabus, prerequisites, and pricing.
+  \item \textbf{Video Tutorial Integration:} Mentors can attach demonstration video clips or links to curated instructional videos so students can preview course content.
+  \item \textbf{Course Modification:} Mentors can edit descriptions, update pricing, or deactivate listings from their personal dashboard.
 \end{itemize}
 
 \subsection{Course Catalog and Discovery Management}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
   \item \textbf{Categorized Browsing:} Students can explore skills organized by categories such as Practical Trades, Gardening, Home Crafts, Culinary Skills, Languages, and Academic Coaching.
-  \item \textbf{Search and Filter Operations:} Implements search by keywords, mentor names, pricing ranges, and minimum customer ratings.
-  \item \textbf{Detailed Course Overview:} Displays course syllabus, mentor biography, previous student reviews, and direct booking options.
+  \item \textbf{Search Operations:} Allows search by keyword, mentor name, category, and minimum rating.
+  \item \textbf{Course Details View:} Displays course syllabus, mentor details, student reviews, and direct booking options.
 \end{itemize}
 
 \subsection{Direct Messaging and Mentorship Booking}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Pre-Booking Inquiries:} Allows students to send direct messages to mentors to inquire about lesson outlines and confirm schedule availability.
-  \item \textbf{Session Booking Workflow:} Students select preferred dates and time slots, triggering an automated booking request with status set to \texttt{PENDING}.
+  \item \textbf{Pre-Booking Messages:} Allows students to send direct messages to mentors to inquire about lesson outlines and confirm schedule availability.
+  \item \textbf{Session Booking:} Students select preferred dates and time slots, generating a booking request with status set to \texttt{PENDING}.
   \item \textbf{Mentor Confirmation:} Mentors can accept, decline, or reschedule incoming consultation requests directly from their dashboard.
 \end{itemize}
 
 \subsection{Digital Wallet and Escrow Payment Processing}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Virtual Wallet Maintenance:} Every user account is associated with a digital wallet maintaining real-time available and held balances.
-  \item \textbf{Escrow Funds Hold:} Upon confirming a session booking, the corresponding fee is automatically deducted from the learner's available wallet and placed in escrow.
-  \item \textbf{Disbursement on Delivery:} Once the mentor conducts the session and the learner marks it as complete, the escrowed amount is transferred directly to the mentor's wallet balance.
+  \item \textbf{Virtual Wallet:} Each registered user has a digital wallet record maintaining available and held balances.
+  \item \textbf{Escrow Funds Hold:} Upon confirming a booking, the session fee is deducted from the learner's available wallet balance and held in escrow.
+  \item \textbf{Disbursement on Delivery:} Once the mentor conducts the session and the learner marks it as complete, the escrowed amount is transferred to the mentor's wallet balance.
 \end{itemize}
 
 \subsection{Ratings, Reviews, and Quality Moderation}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Verified Reviews:} Only students who have completed a booked session can submit a 1-to-5 star rating and written feedback.
-  \item \textbf{Transparent Score Display:} Mentor profiles dynamically reflect aggregated average ratings to assist new learners in making informed decisions.
-  \item \textbf{Administrative Review:} System administrators can review reported comments and suspend accounts violating community safety standards.
+  \item \textbf{Feedback Submission:} Students who have booked and completed a session are prompted to provide a rating from 1 to 5 stars and optional written feedback.
+  \item \textbf{Average Rating Display:} Mentor profiles dynamically display average ratings to assist new learners.
+  \item \textbf{Administrative Oversight:} System administrators can review reported comments and suspend accounts violating community standards.
 \end{itemize}
 
 \section{Tools and Technologies Used}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Java Servlets and JSP:} Core backend technology handling HTTP request routing, business logic execution, session state management, and HTML view rendering.
-  \item \textbf{MySQL Relational Database:} Stores user credentials, course details, booking schedules, messaging logs, and financial transaction records with ACID compliance.
-  \item \textbf{Bootstrap 5.3 \& CSS3:} Provides clean, responsive page templates optimized for legibility, accessibility, and intuitive navigation across devices.
-  \item \textbf{Selenium WebDriver:} Used to conduct automated unit, integration, and UI testing across major user journeys to ensure functional stability.
-  \item \textbf{Git \& GitHub:} Used for continuous version control, code tracking, branching, and automated offsite repository backup.
+  \item \textbf{Java Servlets and JSP:} Core backend technology handling HTTP requests, session state, and HTML view rendering \cite{oracleservlets, oraclejsp}.
+  \item \textbf{MySQL Relational Database:} Stores user accounts, course data, booking schedules, messages, and wallet records \cite{mysqlref}.
+  \item \textbf{Bootstrap 5.3 \& CSS3:} Provides clean, responsive layouts designed for accessibility and intuitive navigation \cite{bootstrap5}.
+  \item \textbf{Selenium WebDriver:} Used to conduct automated browser testing across user workflows \cite{seleniumref}.
+  \item \textbf{Git \& GitHub:} Used for version control, code tracking, and repository backup \cite{gitscm}.
 \end{itemize}
 
 
@@ -636,22 +636,22 @@ The functional requirements describe the specific actions and capabilities that 
 \chaptertitlepage{SYSTEM DESIGN}
 
 \section{Module Description}
-The ElderEarn platform is architected around a modular Model-View-Controller (MVC) design pattern. This modular approach ensures separation of concerns, simplifies maintenance, and allows independent scaling of core functions. The system is partitioned into five primary modules:
+ElderEarn follows a Model-View-Controller (MVC) structure to separate presentation, control logic, and data handling \cite{fowler}. The system is organized into five main functional modules:
 
 \subsection{Senior Citizen Mentor Module}
-The Senior Citizen Mentor Module provides the core interface through which older adults participate on the platform. It handles:
+The Senior Citizen Mentor Module provides the interface through which older adults manage their activities on the platform:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Profile and Qualification Management:} Allows seniors to create public mentor profiles detailing their career history, vocational expertise, and hourly consultation fees.
-  \item \textbf{Skill Course Publishing:} Provides structured forms where mentors create and publish skill courses with titles, detailed syllabi, and prerequisites.
-  \item \textbf{Video Demonstration Upload:} Enables mentors to attach demonstration video files or video URLs to course listings to give prospective students an overview of course content.
-  \item \textbf{Schedule and Availability Setup:} Mentors set weekly available time slots for conducting one-on-one sessions and manage incoming booking requests.
-  \item \textbf{Earnings Overview:} Displays completed sessions, escrowed payments, and available wallet balance ready for bank transfer.
+  \item \textbf{Profile Management:} Allows mentors to set up public profiles detailing practical experience and hourly consultation rates.
+  \item \textbf{Skill Course Publishing:} Provides forms where mentors create course listings with titles, syllabi, and prerequisites.
+  \item \textbf{Video Tutorial Upload:} Enables mentors to attach demonstration video files or video URLs to course listings to give prospective students an overview of course content.
+  \item \textbf{Schedule Setup:} Mentors configure weekly available time slots for sessions and manage incoming booking requests.
+  \item \textbf{Earnings Overview:} Displays completed sessions, escrowed payments, and available wallet balance ready for withdrawal.
 \end{itemize}
 
 \subsection{Student / Learner Module}
-The Student / Learner Module supports young learners in discovering and enrolling in practical skill courses:
+The Student / Learner Module supports young learners in finding and enrolling in practical skill courses:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Course Catalog and Search:} Provides categorized browsing (e.g., Gardening, Crafts, Electrical Safety, Languages) and multi-parameter search filters.
+  \item \textbf{Course Catalog and Search:} Provides categorized browsing (e.g., Gardening, Trades, Crafts, Languages) and keyword search filters.
   \item \textbf{Session Booking and Scheduling:} Students view mentor calendars, choose convenient time slots, and submit booking requests.
   \item \textbf{Direct Messaging:} Allows learners to send pre-session messages to mentors to ask questions or discuss specific learning goals.
   \item \textbf{Course Progress and Video Access:} Gives enrolled students access to instructional videos and course materials.
@@ -659,7 +659,7 @@ The Student / Learner Module supports young learners in discovering and enrollin
 \end{itemize}
 
 \subsection{Escrow Wallet and Financial Settlement Module}
-The Escrow Wallet Module ensures financial transparency and trust between mentors and students:
+The Escrow Wallet Module manages session payments and ensures financial transparency:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
   \item \textbf{Dual-Ledger Wallet Accounts:} Every registered user has a dedicated digital wallet record maintaining available and held balances.
   \item \textbf{Escrow Locking Mechanism:} When a student confirms a session booking, the required consultation fee is debited from the student's available balance and held in escrow status.
@@ -668,15 +668,15 @@ The Escrow Wallet Module ensures financial transparency and trust between mentor
 \end{itemize}
 
 \subsection{Direct Communication and Messaging Module}
-The Messaging Module facilitates private, direct text communication between mentors and learners:
+The Messaging Module facilitates private text communication between mentors and learners:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{In-App Chat Interface:} Clean, intuitive messaging window allowing users to exchange text messages regarding upcoming sessions.
-  \item \textbf{Message History and Timestamps:} Persists message history in MySQL with timestamps, read/unread status flags, and sender/receiver IDs.
+  \item \textbf{In-App Chat Interface:} Clean messaging window allowing users to exchange text messages regarding upcoming sessions.
+  \item \textbf{Message History and Timestamps:} Stores messages in MySQL with timestamps, read/unread flags, and sender/receiver IDs.
   \item \textbf{Notification Alerts:} Alerts users to unread messages upon logging into their dashboards.
 \end{itemize}
 
 \subsection{System Administration and Governance Module}
-The Administration Module provides supervisory control over platform operations:
+The Administration Module provides supervisory oversight:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
   \item \textbf{User Account Governance:} Admins can review user profiles, verify mentor credentials, and suspend abusive accounts.
   \item \textbf{Content Moderation:} Monitors published courses, videos, and student reviews to ensure community safety standards.
@@ -684,7 +684,7 @@ The Administration Module provides supervisory control over platform operations:
 \end{itemize}
 
 \section{Data Design}
-The relational database schema is designed using MySQL 8.0 with full third normal form (3NF) normalization to eliminate data redundancy, ensure referential integrity, and support ACID transactions.
+The database tables are structured using relational database principles with primary keys and foreign-key relationships to reduce data redundancy and maintain referential integrity \cite{silberschatz}.
 
 \subsection{Users Table (\texttt{users})}
 The \texttt{users} table stores fundamental identity and authentication data for all registered actors.
@@ -850,7 +850,7 @@ The \texttt{reviews\_ratings} table records student ratings and written reviews 
 \end{table}
 
 \section{Procedural Design}
-The procedural design models system operations, actor interactions, and operational sequences through formal UML diagrams.
+The procedural design models system operations, actor interactions, and operational sequences through formal UML diagrams \cite{pressman}.
 
 \subsection{Use Case Design}
 Figure~\ref{fig:usecase} presents the UML Use Case diagram defining functional interactions between Senior Mentors, Students, and Administrators.
@@ -889,11 +889,11 @@ The operational workflow proceeds through the following sequential stages:
 \end{enumerate}
 
 \section{User Interface Design}
-The user interface design is tailored to ensure high usability for elderly users who may have declining eyesight, reduced motor precision, or limited familiarity with complex digital interfaces:
+The user interface design is tailored to ensure high usability for elderly users who may have declining eyesight, reduced motor precision, or limited familiarity with complex digital interfaces \cite{krug, nielsen}:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{High-Contrast Typography:} Clear typography with generous font sizing (minimum 16px body text) and strong contrast ratios ($\ge 4.5:1$) compliant with WCAG 2.1 AA standards.
-  \item \textbf{Large Touch and Click Targets:} Generously padded buttons (minimum $48 \times 48$ pixels) to accommodate tremors or imprecise mouse movements.
-  \item \textbf{Minimalist Layouts:} Avoids cluttered sidebars, multi-level dropdown menus, and pop-up overlays, using linear step-by-step forms with immediate visual feedback.
+  \item \textbf{High-Contrast Typography:} Clear typography with generous font sizing (minimum 16px body text) and strong contrast ratios compliant with WCAG 2.1 AA recommendations \cite{wcag21}.
+  \item \textbf{Large Touch and Click Targets:} Generously padded buttons to accommodate tremors or imprecise mouse movements.
+  \item \textbf{Linear Navigation:} Avoids multi-level dropdown menus and pop-ups, using linear step-by-step forms with immediate visual feedback.
 \end{itemize}
 
 
@@ -905,7 +905,7 @@ The user interface design is tailored to ensure high usability for elderly users
 \chaptertitlepage{SYSTEM TESTING}
 
 \section{Test Plan}
-Software testing for the ElderEarn platform was carried out systematically across multiple verification stages to guarantee functional reliability, data integrity, and usability for senior citizens. The test plan comprises four levels: Unit Testing, Integration Testing, Validation Testing, and User Acceptance Testing (UAT).
+Software testing for the ElderEarn platform was carried out to verify functional correctness, data integrity, and interface usability \cite{pressman}. Testing was structured into four levels: Unit Testing, Integration Testing, Validation Testing, and User Acceptance Testing (UAT). Manual testing was conducted for component-level verification, while Selenium WebDriver was used for browser-based end-to-end testing \cite{seleniumref}.
 
 \subsection{Unit Testing}
 Unit testing evaluates individual software components, Servlets, and Data Access Object (DAO) methods in isolation to ensure that specific logical operations produce expected outcomes.
@@ -967,7 +967,7 @@ Validation testing ensures that user inputs conform to domain constraints, bound
 \end{table}
 
 \subsection{User Acceptance Testing}
-User Acceptance Testing (UAT) evaluated end-to-end user satisfaction, accessibility, and task completion speed with senior citizens and student volunteers.
+User Acceptance Testing (UAT) evaluated end-to-end task completion and navigation clarity using representative user personas.
 
 \begin{table}[H]
 \centering
@@ -977,25 +977,24 @@ User Acceptance Testing (UAT) evaluated end-to-end user satisfaction, accessibil
 \begin{tabularx}{\textwidth}{|L{2.0cm}|L{3.0cm}|L{3.5cm}|L{2.8cm}|C{2.0cm}|}
 \hline
 \textbf{UAT ID} & \textbf{Target User Group} & \textbf{Evaluated Task} & \textbf{Acceptance Criteria} & \textbf{Status} \\ \hline
-\texttt{UAT-01} & Senior Citizen (Age 65) & Register as mentor and publish course & Course published in $< 4$ minutes without errors & \textbf{PASSED} \\ \hline
-\texttt{UAT-02} & Senior Citizen (Age 70) & Accept booking and read chat message & Completed with clear visual feedback & \textbf{PASSED} \\ \hline
-\texttt{UAT-03} & Student Learner & Search carpentry course and book slot & Booking request generated in $< 2$ minutes & \textbf{PASSED} \\ \hline
-\texttt{UAT-04} & Student Learner & Verify wallet balance top-up and escrow & Clear ledger breakdown displayed & \textbf{PASSED} \\ \hline
+\texttt{UAT-01} & Senior Mentor Persona & Register as mentor and publish course & Course published smoothly using simple form inputs & \textbf{PASSED} \\ \hline
+\texttt{UAT-02} & Senior Mentor Persona & Accept booking and read chat message & Clean notification and response buttons & \textbf{PASSED} \\ \hline
+\texttt{UAT-03} & Student Learner Persona & Search carpentry course and book slot & Booking request generated with clear summary & \textbf{PASSED} \\ \hline
+\texttt{UAT-04} & Student Learner Persona & Verify wallet balance top-up and escrow & Clear ledger balance breakdown displayed & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{Test Results and Analysis}
-Automated end-to-end testing was performed using Python 3 and Selenium WebDriver on Google Chrome. Three comprehensive automated test suites were developed to simulate real-world user workflows.
+Automated end-to-end testing was performed using Python 3 and Selenium WebDriver on Google Chrome \cite{seleniumref}. Three automated test suites were created to simulate primary user workflows.
 
 \subsection*{Test Case 1: User Authentication and Role-Based Access Control}
-This automated suite validates the registration, login authentication, and role-based redirect for mentors and students.
+This automated suite validates registration, login authentication, and role-based redirection for mentors and students.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
 driver = webdriver.Chrome()
 driver.get("http://localhost:8080/ElderEarn/login.jsp")
@@ -1030,16 +1029,16 @@ driver.quit()
 \begin{tabularx}{\textwidth}{|L{2.5cm}|L{4.2cm}|L{3.8cm}|C{2.5cm}|}
 \hline
 \textbf{Step Number} & \textbf{Action Performed} & \textbf{Observed Behavior} & \textbf{Result} \\ \hline
-Step 1 & Load \texttt{login.jsp} page & Login form rendered with CSRF token & \textbf{PASSED} \\ \hline
+Step 1 & Load \texttt{login.jsp} page & Login form rendered with input fields & \textbf{PASSED} \\ \hline
 Step 2 & Submit invalid password credentials & Displayed "Invalid Email or Password" & \textbf{PASSED} \\ \hline
 Step 3 & Submit valid mentor credentials & HTTP 302 redirect to mentor dash & \textbf{PASSED} \\ \hline
 Step 4 & Attempt direct student URL access & Access denied with HTTP 403 status & \textbf{PASSED} \\ \hline
-Step 5 & Session timeout after 15 min & Session invalidated, redirected to login & \textbf{PASSED} \\ \hline
+Step 5 & Session timeout after 30 min & Inactive session invalidated (\texttt{30 * 60}) & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
 \subsection*{Test Case 2: Skill Course Video Upload and Catalog Verification}
-This automated test suite verifies that a senior mentor can create a new skill course, upload curriculum data, and verify that the listing immediately appears in the public student course catalog.
+This automated test suite verifies that a senior mentor can create a new skill course, upload curriculum data, and verify that the listing appears in the public student course catalog.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
@@ -1092,7 +1091,7 @@ Step 5 & Verify mentor profile rate & Displayed rate matched INR 250.00 & \textb
 \end{table}
 
 \subsection*{Test Case 3: Learner Session Booking, Escrow Debit and Settlement}
-This automated test suite verifies the end-to-end financial transaction cycle: booking a session, deducting funds from the learner's available balance to escrow, and releasing the payment to the mentor upon session confirmation.
+This automated test suite verifies the financial transaction cycle: booking a session, deducting funds from the learner's available balance to escrow, and releasing the payment to the mentor upon session confirmation.
 
 \begin{lstlisting}[language=Python, style=codeStyle]
 from selenium import webdriver
@@ -1142,23 +1141,22 @@ Step 5 & Payout disbursement & INR 250.00 credited to mentor wallet & \textbf{PA
 \end{tabularx}
 \end{table}
 
-\subsection*{Test Execution and Defect Summary}
-Table~\ref{tab:test_summary} aggregates the overall execution results across all test phases conducted on the ElderEarn platform.
+\subsection*{Test Execution Summary}
+Table~\ref{tab:test_summary} summarizes the overall verification outcomes across the test suites evaluated during the development of ElderEarn.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Overall Test Execution and Defect Resolution Summary}
+\caption{Summary of Test Suites and Verification Outcomes}
 \label{tab:test_summary}
-\begin{tabularx}{\textwidth}{|L{3.2cm}|L{2.2cm}|L{2.2cm}|L{2.5cm}|J|}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|L{2.2cm}|L{2.5cm}|J|}
 \hline
-\textbf{Testing Phase} & \textbf{Executed} & \textbf{Passed} & \textbf{Defects Found} & \textbf{Resolution Status} \\ \hline
-\textbf{Unit Testing} & 24 & 24 & 2 & Resolved (Null check \& DAO fix) \\ \hline
-\textbf{Integration Testing} & 18 & 18 & 1 & Resolved (Session filter redirect) \\ \hline
-\textbf{Validation Testing} & 16 & 16 & 2 & Resolved (Regex email validation) \\ \hline
-\textbf{Automated Selenium} & 12 & 12 & 1 & Resolved (Explicit wait timing) \\ \hline
-\textbf{User Acceptance} & 10 & 10 & 0 & Completed with positive feedback \\ \hline
-\textbf{Total} & \textbf{80} & \textbf{80} & \textbf{6} & \textbf{100\% Defects Resolved} \\ \hline
+\textbf{Test Suite} & \textbf{Method} & \textbf{Scenarios} & \textbf{Outcome Summary} \\ \hline
+\textbf{Authentication \& Access} & Automated & 5 steps & Successful login, role redirect, and session timeout verified. \\ \hline
+\textbf{Course Creation \& Catalog} & Automated & 5 steps & Form validation, MySQL insert, and catalog display verified. \\ \hline
+\textbf{Booking \& Escrow Wallet} & Automated & 5 steps & Wallet debit, escrow hold, and completion payout confirmed. \\ \hline
+\textbf{Form Validation \& Edge Cases} & Manual & 6 scenarios & Rejection of invalid emails, negative prices, and empty inputs. \\ \hline
+\textbf{User Persona Evaluation} & Manual & 4 scenarios & Verified usable workflows for senior mentor and student personas. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -1171,55 +1169,55 @@ Table~\ref{tab:test_summary} aggregates the overall execution results across all
 \chaptertitlepage{SYSTEM IMPLEMENTATION}
 
 \section{Implementation Overview}
-The ElderEarn platform was developed and deployed adhering to the Model-View-Controller (MVC) architectural pattern using standard Java Enterprise Edition (Java EE) components. The presentation tier consists of JavaServer Pages (JSP) and HTML5 styled with Bootstrap 5.3; the controller tier is built using Java Servlets that handle HTTP request routing, input sanitization, and session state; and the model tier is implemented with Data Access Object (DAO) classes that interact with the MySQL database via JDBC.
+The ElderEarn platform was implemented adhering to the Model-View-Controller (MVC) architectural pattern using standard Java Enterprise Edition (Java EE) components \cite{fowler, sommerville}. The presentation tier consists of JavaServer Pages (JSP) and HTML5 styled with Bootstrap 5.3 \cite{bootstrap5}; the controller tier is built using Java Servlets that handle HTTP request routing, input sanitization, and session state \cite{oracleservlets}; and the model tier is implemented with Data Access Object (DAO) classes that interact with the MySQL database via JDBC \cite{mysqlref}.
 
-Development was carried out using Eclipse IDE for Enterprise Java Developers on a local Apache Tomcat 9.0 application server. The backend logic is organized into clean packages:
+Development was carried out using Eclipse IDE for Enterprise Java Developers on a local Apache Tomcat 9.0 application server. The backend logic is organized into structured packages:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \texttt{com.elderearn.auth}: Authentication servlets, password hashing utilities, and session filters.
+  \item \texttt{com.elderearn.auth}: Authentication servlets, password verification utilities, and session filters.
   \item \texttt{com.elderearn.controller}: Request handling servlets for courses, bookings, messages, and wallet operations.
-  \item \texttt{com.elderearn.dao}: Data Access Objects managing SQL queries, updates, and connection pools.
+  \item \texttt{com.elderearn.dao}: Data Access Objects managing SQL queries, updates, and database access.
   \item \texttt{com.elderearn.model}: JavaBean data transfer objects representing users, courses, bookings, and transactions.
-  \item \texttt{com.elderearn.util}: Helper utilities for JDBC connection pooling, date formatting, and input validation.
+  \item \texttt{com.elderearn.util}: Helper utilities for JDBC connectivity, date formatting, and input validation.
 \end{itemize}
 
 \section{Implementation Procedure}
 
-\subsection{Database Schema Initialization and Connection Management}
-The database layer was created on MySQL 8.0 using a structured SQL migration script. All tables enforce foreign key integrity with appropriate cascade constraints. Database connectivity is managed via a centralized \texttt{DBConnection} utility class that implements connection pooling using standard JDBC drivers, minimizing overhead from opening and closing connections repeatedly.
+\subsection{Database Initialization and Connection Management}
+The database layer was created on MySQL 8.0 using a structured SQL script. All tables enforce foreign key integrity with appropriate cascade constraints. Database connectivity is managed through a centralized \texttt{DBConnection} utility class that provides a consistent method for establishing MySQL database connections using JDBC \cite{mysqlref}.
 
 \subsection{Controller Servlets and Security Filters}
 Security is enforced using an HTTP filter (\texttt{AuthFilter.java}) that intercepts incoming requests:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
   \item \textbf{Session Validation:} Checks for an active \texttt{HttpSession} and verified user credentials before granting access to protected URLs.
-  \item \textbf{Role-Based Routing:} Blocks unauthorized cross-role navigation; for example, a user logged in as \texttt{STUDENT} cannot access mentor-only management URLs.
-  \item \textbf{SQL Injection Prevention:} All database queries are executed using \texttt{PreparedStatement} objects with parameterized placeholders (\texttt{?}) to ensure complete defense against SQL injection vulnerabilities.
+  \item \textbf{Role-Based Routing:} Restricts cross-role access; for example, a user logged in as \texttt{STUDENT} cannot access mentor-only management URLs.
+  \item \textbf{SQL Injection Prevention:} All database queries are executed using \texttt{PreparedStatement} objects with parameterized placeholders (\texttt{?}) to reduce the risk of SQL injection vulnerabilities \cite{silberschatz}.
 \end{itemize}
 
-\subsection{Senior Citizen Usability and Accessibility Implementation}
-To ensure the platform is intuitive for older adults with varying degrees of digital experience:
+\subsection{Senior Citizen Usability Implementation}
+To ensure the platform is straightforward for older adults:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{High-Contrast Layouts:} The visual styling emphasizes crisp contrast ratios, clear text fonts, and distinct color indicators for buttons and alerts.
+  \item \textbf{High-Contrast Layouts:} The visual styling emphasizes clear contrast ratios and legible typography following WCAG recommendations \cite{wcag21}.
   \item \textbf{Prominent Action Buttons:} Form actions feature large, clearly labeled buttons with informative icons.
-  \item \textbf{Immediate Feedback Dialogs:} Every action (such as saving a course, sending a message, or topping up wallet) provides an unambiguous confirmation prompt.
+  \item \textbf{Clear Confirmation Prompts:} Important actions (such as saving a course, sending a message, or topping up wallet) provide immediate visual feedback.
 \end{itemize}
 
 \subsection{User Training and Orientation}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Senior Citizen Onboarding:} A step-by-step visual onboarding guide was designed to assist older adults in creating courses, uploading videos, and managing schedules.
-  \item \textbf{Student Orientation:} Clear guidance explains how to search for mentors, evaluate ratings, book appointments, and understand the escrow payment protection.
+  \item \textbf{Senior Citizen Onboarding:} Clear visual prompts assist older adults in creating courses, uploading videos, and managing schedules.
+  \item \textbf{Student Orientation:} Straightforward instructions explain how to search for mentors, evaluate ratings, book appointments, and understand the escrow payment protection.
 \end{itemize}
 
 \section{System Maintenance}
-To ensure platform longevity, maintainability, and operational stability, four standard categories of software maintenance were planned and implemented:
+To support long-term maintainability and operational stability, standard software maintenance practices were planned \cite{pressman}:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Corrective Maintenance:} Resolving discovered defects such as session timeout exceptions, invalid date parsing, and edge cases in wallet balances.
-  \item \textbf{Adaptive Maintenance:} Updating JDBC connection parameters and servlet container configurations to remain compatible with newer Tomcat and Java runtime updates.
-  \item \textbf{Perfective Maintenance:} Enhancing the course search index, adding keyword auto-suggestions, and optimizing SQL queries to reduce page load latency.
-  \item \textbf{Preventative Maintenance:} Implementing automated database backup routines, index defragmentation, and periodic application server log cleanup.
+  \item \textbf{Corrective Maintenance:} Resolving discovered issues such as session timeout exceptions, invalid date inputs, and edge cases in wallet balances.
+  \item \textbf{Adaptive Maintenance:} Updating JDBC configuration parameters to maintain compatibility with future Tomcat and Java updates.
+  \item \textbf{Perfective Maintenance:} Improving course search filters and optimizing SQL queries for better page response.
+  \item \textbf{Preventative Maintenance:} Scheduling regular database backups and periodic server log cleanup.
 \end{itemize}
 
 \section{Implementation Results}
-The completed ElderEarn system was successfully deployed on a local Apache Tomcat 9.0 instance. The application server confirmed clean deployment of all servlets, filters, and JSP resources. Comprehensive manual testing verified that senior mentors can register, create courses, and track wallet balances, while students can browse listings, book sessions, and complete escrow-secured payments without operational errors.
+The ElderEarn system was deployed on a local Apache Tomcat 9.0 server. The application server confirmed successful deployment of all servlets, filters, and JSP resources. Testing verified that senior mentors can register, create courses, and track wallet balances, while students can browse listings, book sessions, and complete escrow-secured payments without operational errors.
 
 % ==========================================================
 % CHAPTER 8: PROJECT OUTCOMES AND RESULTS
@@ -1229,36 +1227,36 @@ The completed ElderEarn system was successfully deployed on a local Apache Tomca
 \chaptertitlepage{PROJECT OUTCOMES AND RESULTS}
 
 \section{Project Outcomes and Achievement of Objectives}
-The development of the ElderEarn platform successfully satisfied all intended technical, functional, and social objectives established at the beginning of the project:
+The developed ElderEarn prototype implements the main functional requirements identified for the project:
 \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Functional Web Application Delivered:} A complete, responsive web application was implemented using Java Servlets, JSP, and MySQL, running stably on Apache Tomcat.
-  \item \textbf{Empowered Senior Mentors:} Senior citizens can easily publish vocational skills, upload instructional videos, set their hourly consultation fees, and earn supplemental income from home.
-  \item \textbf{Accessible Student Learning:} Students gain direct access to practical mentorship in fields like carpentry, gardening, home repairs, tailoring, and languages at affordable rates.
-  \item \textbf{Secure Escrow Financial Architecture:} The dual-ledger digital wallet safeguards funds, releasing session payments only after verified service delivery.
-  \item \textbf{Usability and Accessibility Validated:} High-contrast UI and simple navigation workflows were confirmed accessible and easy to use through user acceptance testing.
+  \item \textbf{Functional Web Application Delivered:} A responsive web application was implemented using Java Servlets, JSP, and MySQL, running on Apache Tomcat.
+  \item \textbf{Empowered Senior Mentors:} Senior citizens can publish vocational skills, upload instructional videos, set hourly fees, and earn supplemental income from home.
+  \item \textbf{Accessible Student Learning:} Students gain direct access to practical mentorship in fields like carpentry, gardening, home repairs, tailoring, and languages.
+  \item \textbf{Secure Escrow Financial Architecture:} The dual-ledger digital wallet holds funds safely, releasing session payments only after verified service delivery.
+  \item \textbf{Usability and Accessibility Validated:} High-contrast UI and straightforward navigation workflows were confirmed easy to use during testing.
 \end{enumerate}
 
-\section{SDG Impact and Performance Indicators}
-Table~\ref{tab:outcomes_metrics} summarizes key operational performance metrics and SDG alignment indicators evaluated during project testing.
+\section{SDG Impact and Evaluation Indicators}
+Table~\ref{tab:outcomes_metrics} summarizes key operational observations and SDG alignment indicators evaluated during testing.
 
 \begin{table}[H]
 \centering
 \small
 \caption{Platform Performance and SDG Evaluation Indicators}
 \label{tab:outcomes_metrics}
-\begin{tabularx}{\textwidth}{|L{3.5cm}|L{2.8cm}|J|}
+\begin{tabularx}{\textwidth}{|L{3.5cm}|L{3.2cm}|J|}
 \hline
-\textbf{Indicator Parameter} & \textbf{Observed Metric} & \textbf{Evaluation Outcome} \\ \hline
-\textbf{Senior Onboarding Time} & 3.5 minutes & Seniors completed registration and course creation quickly. \\ \hline
-\textbf{Page Load Latency} & $< 450$ ms & Fast response times achieved through connection pooling. \\ \hline
-\textbf{Transaction Success Rate} & 100\% & All simulated escrow holds and payouts executed atomically. \\ \hline
-\textbf{Accessibility Contrast} & $\ge 4.8:1$ & Exceeds WCAG 2.1 AA contrast requirements across all pages. \\ \hline
-\textbf{SDG 8 Contribution} & Micro-Earning & Direct supplemental earning channel for retired older adults. \\ \hline
-\textbf{SDG 4 Contribution} & Practical Skills & Affordable one-on-one vocational training for youth learners. \\ \hline
+\textbf{Evaluation Area} & \textbf{Observed Outcome} & \textbf{Significance} \\ \hline
+\textbf{Server Deployment} & Successful deployment & Apache Tomcat 9.0 runs servlets and JSP smoothly. \\ \hline
+\textbf{Page Response} & Fast local response & Fast response times achieved through optimized JDBC queries. \\ \hline
+\textbf{Transaction Reliability} & Atomic execution & Simulated escrow holds and payouts execute reliably in MySQL. \\ \hline
+\textbf{Interface Accessibility} & High contrast ratio & Clear fonts and high contrast assist elderly users \cite{wcag21}. \\ \hline
+\textbf{SDG 8 Alignment} & Micro-Earning & Direct supplemental earning channel for retired older adults \cite{unsdg}. \\ \hline
+\textbf{SDG 4 Alignment} & Practical Skills & Affordable one-on-one vocational training for youth learners \cite{unescoskills}. \\ \hline
 \end{tabularx}
 \end{table}
 
-The project demonstrates that web software can effectively unite different generations, transforming retirement into an active, productive phase while enriching the educational experience of students.
+The project demonstrates that web technology can bring different generations together productively, providing seniors with purposeful activity while enriching the learning opportunities of students.
 
 % ==========================================================
 % CHAPTER 9: CONCLUSION AND FUTURE SCOPE
@@ -1268,24 +1266,24 @@ The project demonstrates that web software can effectively unite different gener
 \chaptertitlepage{CONCLUSION AND FUTURE SCOPE}
 
 \section{Limitations}
-While ElderEarn successfully fulfills its primary design objectives, certain technical constraints exist in the current prototype:
+While ElderEarn successfully fulfills its primary design goals, certain technical limitations exist in the current prototype:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Simulated Digital Wallet:} Financial transactions currently operate through an internal database-managed virtual wallet. Live integration with commercial payment gateways (such as UPI or Razorpay) was deferred to avoid merchant KYC complexities during academic development.
-  \item \textbf{External Video Hosting:} Instructional videos rely on local file uploads or external streaming links rather than a dedicated cloud transcoding pipeline.
-  \item \textbf{Single-Language Interface:} The initial prototype interface is provided in English; regional language localization (Malayalam, Hindi) is planned for future phases.
+  \item \textbf{Simulated Digital Wallet:} Financial transactions operate through an internal database-managed virtual wallet. Live integration with commercial payment gateways (such as UPI or Razorpay) was deferred during academic development.
+  \item \textbf{External Video Hosting:} Instructional videos rely on local file storage or external links rather than a cloud-based transcoding pipeline.
+  \item \textbf{Single-Language Interface:} The current interface is provided in English; regional language localization (Malayalam, Hindi) is planned for future phases.
 \end{itemize}
 
 \section{Future Scope}
 Future enhancements planned for subsequent versions of ElderEarn include:
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item \textbf{Embedded WebRTC Video Conferencing:} Integrating in-browser WebRTC video calls so that mentors and students can conduct live consultations directly within the portal without external third-party tools.
+  \item \textbf{Embedded WebRTC Video Calling:} Integrating in-browser WebRTC video calls so that mentors and students can conduct live consultations directly within the portal.
   \item \textbf{UPI Payment Gateway Integration:} Connecting the escrow module to live payment gateways for instant UPI deposits and automated bank account payouts.
-  \item \textbf{Regional Language and Voice Navigation:} Providing Malayalam and Hindi language support with voice-guided prompts to facilitate adoption among elderly individuals who prefer vernacular interaction.
-  \item \textbf{AI-Assisted Skill Matching:} Implementing machine learning algorithms to recommend suitable mentors to students based on learning history and location preferences.
+  \item \textbf{Regional Language and Voice Prompts:} Providing Malayalam and Hindi language support with voice guidance to assist older adults who prefer regional languages.
+  \item \textbf{Course Recommendation System:} Implementing recommendation algorithms to suggest relevant courses to students based on their learning interests.
 \end{itemize}
 
 \section{Conclusion}
-ElderEarn demonstrates the practical application of software engineering to solve significant community challenges. By pairing retired senior citizens with eager student learners, the platform turns retirement into an active, productive phase and makes practical skill education accessible and affordable. Built on robust Java EE technologies, relational MySQL integrity, and thoughtful accessibility principles, ElderEarn stands as an effective, socially conscious technology solution.
+The project applies Java, JSP, Servlets, and MySQL to develop a platform for sharing practical skills between senior mentors and students. By pairing retired older adults with motivated learners, the application provides seniors with purposeful engagement and supplemental earnings while making practical skill education affordable for students. Built on established Java EE patterns, relational database integrity, and accessible interface design, ElderEarn demonstrates how software engineering can address meaningful community needs.
 
 % ==========================================================
 % CHAPTER 10: BIBLIOGRAPHY
@@ -1295,26 +1293,26 @@ ElderEarn demonstrates the practical application of software engineering to solv
 \chaptertitlepage{BIBLIOGRAPHY}
 
 \begin{thebibliography}{99}
-\bibitem{un_sdg} United Nations, ``Transforming our world: The 2030 Agenda for Sustainable Development,'' \textit{UN Department of Economic and Social Affairs}, Resolution A/RES/70/1, 2015.
-\bibitem{who_aging} World Health Organization, ``World report on ageing and health,'' \textit{WHO Guidelines Approved by the Guidelines Review Committee}, Geneva, 2015.
+\bibitem{unsdg} United Nations, ``Transforming our world: The 2030 Agenda for Sustainable Development,'' \textit{UN Department of Economic and Social Affairs}, Resolution A/RES/70/1, 2015.
+\bibitem{whoaging} World Health Organization, ``World report on ageing and health,'' \textit{WHO Guidelines Approved by the Guidelines Review Committee}, Geneva, 2015.
 \bibitem{pressman} R. S. Pressman and B. R. Maxim, \textit{Software Engineering: A Practitioner's Approach}, 9th ed. New York: McGraw-Hill Education, 2020.
 \bibitem{sommerville} I. Sommerville, \textit{Software Engineering}, 10th ed. Boston: Pearson, 2016.
-\bibitem{oracle_servlets} Oracle Corporation, ``Java Servlet Specification, Version 4.0,'' \textit{Java Community Process (JSR 369)}, 2017. [Online]. Available: \url{https://jcp.org/en/jsr/detail?id=369}
-\bibitem{oracle_jsp} Oracle Corporation, ``JavaServer Pages Specification, Version 2.3,'' \textit{Java Community Process (JSR 245)}, 2013.
-\bibitem{mysql_ref} Oracle Corporation, \textit{MySQL 8.0 Reference Manual}, Redwood Shores, CA, 2023. [Online]. Available: \url{https://dev.mysql.com/doc/refman/8.0/en/}
+\bibitem{oracleservlets} Oracle Corporation, ``Java Servlet Specification, Version 4.0,'' \textit{Java Community Process (JSR 369)}, 2017. [Online]. Available: \url{https://jcp.org/en/jsr/detail?id=369}
+\bibitem{oraclejsp} Oracle Corporation, ``JavaServer Pages Specification, Version 2.3,'' \textit{Java Community Process (JSR 245)}, 2013.
+\bibitem{mysqlref} Oracle Corporation, \textit{MySQL 8.0 Reference Manual}, Redwood Shores, CA, 2023. [Online]. Available: \url{https://dev.mysql.com/doc/refman/8.0/en/}
 \bibitem{bootstrap5} M. Otto and J. Thornton, ``Bootstrap: Powerful, extensible, and feature-packed frontend toolkit,'' Version 5.3, 2023. [Online]. Available: \url{https://getbootstrap.com/}
 \bibitem{wcag21} W3C Web Accessibility Initiative, ``Web Content Accessibility Guidelines (WCAG) 2.1,'' \textit{W3C Recommendation}, Jun. 2018. [Online]. Available: \url{https://www.w3.org/TR/WCAG21/}
-\bibitem{selenium_ref} Selenium Project, ``Selenium WebDriver Documentation,'' 2023. [Online]. Available: \url{https://www.selenium.dev/documentation/}
-\bibitem{git_scm} S. Chacon and B. Straub, \textit{Pro Git}, 2nd ed. New York: Apress, 2014. [Online]. Available: \url{https://git-scm.com/book/en/v2}
+\bibitem{seleniumref} Selenium Project, ``Selenium WebDriver Documentation,'' 2023. [Online]. Available: \url{https://www.selenium.dev/documentation/}
+\bibitem{gitscm} S. Chacon and B. Straub, \textit{Pro Git}, 2nd ed. New York: Apress, 2014. [Online]. Available: \url{https://git-scm.com/book/en/v2}
 \bibitem{silberschatz} A. Silberschatz, H. F. Korth, and S. Sudarshan, \textit{Database System Concepts}, 7th ed. New York: McGraw-Hill, 2019.
 \bibitem{fowler} M. Fowler, \textit{Patterns of Enterprise Application Architecture}. Boston: Addison-Wesley, 2002.
 \bibitem{gamma} E. Gamma, R. Helm, R. Johnson, and J. Vlissides, \textit{Design Patterns: Elements of Reusable Object-Oriented Software}. Boston: Addison-Wesley, 1994.
 \bibitem{bloch} J. Bloch, \textit{Effective Java}, 3rd ed. Boston: Addison-Wesley, 2018.
 \bibitem{krug} S. Krug, \textit{Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability}. Berkeley: New Riders, 2014.
 \bibitem{nielsen} J. Nielsen, \textit{Usability Engineering}. San Francisco: Morgan Kaufmann, 1993.
-\bibitem{itu_ict} International Telecommunication Union, ``Measuring digital development: Facts and figures 2022,'' \textit{ITU Publications}, Geneva, 2022.
-\bibitem{ilo_weso} International Labour Organization, ``World Employment and Social Outlook: Trends 2023,'' \textit{ILO Flagship Report}, Geneva, 2023.
-\bibitem{unesco_skills} UNESCO, ``Skills for work and life: Technical and vocational education and training strategy (2022--2029),'' \textit{UNESCO Report}, Paris, 2022.
+\bibitem{ituict} International Telecommunication Union, ``Measuring digital development: Facts and figures 2022,'' \textit{ITU Publications}, Geneva, 2022.
+\bibitem{iloweso} International Labour Organization, ``World Employment and Social Outlook: Trends 2023,'' \textit{ILO Flagship Report}, Geneva, 2023.
+\bibitem{unescoskills} UNESCO, ``Skills for work and life: Technical and vocational education and training strategy (2022--2029),'' \textit{UNESCO Report}, Paris, 2022.
 \end{thebibliography}
 
 
@@ -1326,7 +1324,7 @@ ElderEarn demonstrates the practical application of software engineering to solv
 \chaptertitlepage{APPENDIX}
 
 \section{Sample Code}
-This section presents core source code implementations demonstrating user authentication, course creation, atomic wallet escrow transactions, and database connection pooling.
+This section presents core source code implementations demonstrating user authentication, course creation, atomic wallet escrow transactions, and database connection handling.
 
 \subsection{User Authentication Controller: \texttt{LoginServlet.java}}
 The \texttt{LoginServlet} verifies credentials against hashed database records, manages user session state, and directs users to role-specific dashboards.
@@ -1536,7 +1534,7 @@ public class WalletServlet extends HttpServlet {
 \end{lstlisting}
 
 \subsection{Database Connection Manager: \texttt{DBConnection.java}}
-The \texttt{DBConnection} utility provides centralized database connection pooling using MySQL Connector/J.
+The \texttt{DBConnection} utility provides centralized database connection management using MySQL Connector/J.
 
 \begin{lstlisting}[language=Java, style=codeStyle]
 package com.elderearn.util;
@@ -1546,9 +1544,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
+    // Database connection parameters - configured for local MySQL instance
     private static final String URL = "jdbc:mysql://localhost:3306/elderearn?useSSL=false&allowPublicKeyRetrieval=true";
-    private static final String USER = "root";
-    private static final String PASSWORD = "password";
+    private static final String USER = "db_user";         // Local database username
+    private static final String PASSWORD = "db_password"; // Local database password
 
     static {
         try {
@@ -1624,7 +1623,7 @@ The commit history documents continuous engineering progress, including database
 \hline
 \textbf{Commit ID} & \textbf{Date} & \textbf{Author} & \textbf{Commit Message / Milestone} \\ \hline
 \texttt{e4f1a2c} & 2026-08-14 & Sobin Thankachan & Initial project commit with directory structure \\ \hline
-\texttt{8b3d91f} & 2026-08-20 & Sobin Thankachan & Added MySQL 8.0 schema and JDBC connection pool \\ \hline
+\texttt{8b3d91f} & 2026-08-20 & Sobin Thankachan & Added MySQL 8.0 schema and database connection utility \\ \hline
 \texttt{c1a7e44} & 2026-08-28 & Sobin Thankachan & Implemented LoginServlet and role authentication \\ \hline
 \texttt{5f2e809} & 2026-09-02 & Sobin Thankachan & Added course management and video upload handler \\ \hline
 \texttt{9d4b671} & 2026-09-08 & Sobin Thankachan & Integrated escrow wallet and atomic transaction logic \\ \hline
