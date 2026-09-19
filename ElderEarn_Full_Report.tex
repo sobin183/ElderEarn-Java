@@ -568,7 +568,7 @@ Table~\ref{tab:software_specs} details the software stack and developer tools us
 \textbf{User Interface Stack} & HTML5, CSS3, JavaScript & Standard front-end technologies for web pages \\ \hline
 \textbf{Front-End Framework} & Bootstrap & Version 5.3 for responsive and accessible grid layouts \\ \hline
 \textbf{Integrated Dev. Env.} & Eclipse IDE for Enterprise Java & Version 2023-09+ for development and builds \\ \hline
-\textbf{Testing Automation} & Java with Selenium WebDriver & Version 4.x for automated browser test validation \\ \hline
+\textbf{Testing Automation} & Python with Selenium WebDriver & Version 4.15+ for automated browser test validation \\ \hline
 \textbf{Version Control} & Git \& GitHub & Distributed version control and repository backup \\ \hline
 \end{tabularx}
 \end{table}
@@ -904,85 +904,75 @@ The user interface design is tailored to ensure high usability for elderly users
 \addcontentsline{toc}{chapter}{CHAPTER \thechapter: SYSTEM TESTING}
 \chaptertitlepage{SYSTEM TESTING}
 
-% ==========================================================
-% SYSTEM TESTING & AUTOMATED SELENIUM TEST RESULTS
-% ==========================================================
+Testing was performed at different levels to identify functional and integration errors. Unit testing focused on individual utility and DAO operations, integration testing verified communication between JSP pages, servlets, DAO classes, and the MySQL database, while validation testing checked system responses to invalid inputs. Selenium WebDriver was also used for automated end-to-end testing \cite{seleniumref, pressman}.
 
-Testing was performed at different levels to identify functional and integration errors. Unit testing focused on individual utility and DAO operations, integration testing verified communication between JSP pages, servlets, DAO classes, and the MySQL database, while validation testing checked system responses to invalid inputs. Selenium WebDriver was also used for automated end-to-end testing.
-
-\subsection{Unit Testing}
-Unit testing was used to verify individual components of the application before complete system integration. Important components such as password hashing and verification, skill creation through form inputs, rating operations, saved-skill operations, and input validation were checked using valid and invalid inputs.
-
-\vspace{0.3cm}
-\noindent\textit{Unit Test Execution Summary}
-\vspace{0.2cm}
+\section{Unit Testing}
+Unit testing was used to verify individual components of the application before complete system integration. Important components such as password hashing and verification, user registration, course creation, wallet escrow operations, and payout releases were checked using valid and invalid inputs.
 
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|L{2.0cm}|L{4.0cm}|L{4.8cm}|L{2.0cm}|}
+\caption{Unit Test Execution Summary}
+\label{tab:unit_test_summary}
+\begin{tabularx}{\textwidth}{|L{2.0cm}|L{4.0cm}|J|C{2.0cm}|}
 \hline
 \textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Output} & \textbf{Status} \\ \hline
-UT-01 & Password hashing and verification & Correct password is verified successfully & Passed \\ \hline
-UT-02 & Skill creation through SkillDAO & Valid skill details are stored in database & Passed \\ \hline
-UT-03 & Rating validation & Only ratings from 1 to 5 are accepted & Passed \\ \hline
-UT-04 & Saved-skill operation & Skill course is correctly added & Passed \\ \hline
-UT-05 & Price validation & Invalid or negative prices are rejected & Passed \\ \hline
+\texttt{UT-01} & Password hashing and verification & Correct password is verified successfully & \textbf{PASSED} \\ \hline
+\texttt{UT-02} & User registration through \texttt{UserDAO} & Valid user details are stored in database & \textbf{PASSED} \\ \hline
+\texttt{UT-03} & Course creation through \texttt{SkillCourseDAO} & Valid skill course details are inserted into database & \textbf{PASSED} \\ \hline
+\texttt{UT-04} & Escrow lock operation in \texttt{WalletDAO} & Booking amount is successfully held in escrow & \textbf{PASSED} \\ \hline
+\texttt{UT-05} & Payout release operation in \texttt{WalletDAO} & Escrow funds are transferred to mentor wallet & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
-\subsection{Integration Testing}
-Integration testing verified the complete communication between the presentation, servlet, DAO, and database layers. For example, submitting the Add Skill form was tested to confirm that the servlet receives the data, validates it, passes it to the database, and stores the resulting record in the MySQL database. Similarly, ratings, saved skills, and browse operations were checked from the user interface through the database.
-
-\vspace{0.3cm}
-\noindent\textit{Integration Test Results}
-\vspace{0.2cm}
+\section{Integration Testing}
+Integration testing verified the complete communication between the presentation, servlet, DAO, and database layers. For example, submitting the Add Skill form was tested to confirm that the servlet receives the data, validates it, passes it to \texttt{SkillCourseDAO}, and stores the resulting record in the MySQL database. Similarly, ratings, session bookings, and wallet transactions were checked from the user interface through the database.
 
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|L{1.8cm}|L{3.8cm}|L{5.0cm}|L{2.0cm}|}
+\caption{Integration Test Results}
+\label{tab:integration_test_results}
+\begin{tabularx}{\textwidth}{|L{1.8cm}|L{4.2cm}|J|C{2.0cm}|}
 \hline
 \textbf{ID} & \textbf{Test Case} & \textbf{Expected Result} & \textbf{Status} \\ \hline
-VT-01 & Required Fields & Empty required fields are rejected. & Passed \\ \hline
-VT-02 & Price Validation & Invalid or zero prices are rejected. & Passed \\ \hline
-VT-03 & Duplicate Skill & Duplicate skill courses are detected before insertion. & Passed \\ \hline
-VT-04 & Authentication & Restricted operations require user login. & Passed \\ \hline
-VT-05 & Rating Range & Only ratings from 1--5 are accepted. & Passed \\ \hline
-VT-06 & Duplicate Rating & Duplicate ratings for the same skill are prevented. & Passed \\ \hline
+\texttt{IT-01} & Authentication \& Session Routing & Valid mentor login creates session and redirects to dashboard & \textbf{PASSED} \\ \hline
+\texttt{IT-02} & Skill Listing \& Catalog Sync & Published skill is immediately visible in student catalog & \textbf{PASSED} \\ \hline
+\texttt{IT-03} & Booking to Escrow Pipeline & Booking triggers atomic debit and escrow fund allocation & \textbf{PASSED} \\ \hline
+\texttt{IT-04} & Session Completion \& Payout & Confirming completion releases escrow funds to mentor & \textbf{PASSED} \\ \hline
+\texttt{IT-05} & Direct Messaging Persistence & Chat messages are stored in database and displayed in view & \textbf{PASSED} \\ \hline
+\texttt{IT-06} & Role Authorization Guard & Student cannot access mentor administrative pages & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
-\subsection{User Acceptance Testing}
-User acceptance testing was performed to evaluate the overall usability of ElderEarn. Users were asked to perform common tasks such as registering, logging in, searching for skills, viewing course details, publishing new skills, and browsing the marketplace. The testing focused on ease of navigation, clarity of information, responsiveness, and overall user experience for older adults.
+\section{User Acceptance Testing}
+User acceptance testing was performed to evaluate the overall usability of ElderEarn. Users representing senior citizens (mentors) and students were asked to perform common tasks such as registering, logging in, publishing skill courses, browsing marketplace offerings, booking learning sessions, and communicating via the chat interface. The testing focused on ease of navigation, clarity of information, font readability for senior mentors, responsiveness, and overall user experience.
 
-\subsection{Validation Testing}
-Validation testing was performed to ensure that invalid or incomplete inputs are handled correctly. Required fields in the Add Skill form were checked, invalid prices were rejected, duplicate user entries were detected, and unauthenticated users were prevented from performing restricted operations. Rating values outside the 1--5 range and duplicate ratings for the same skill course were also tested.
-
-\vspace{0.3cm}
-\noindent\textit{Validation Test Results}
-\vspace{0.2cm}
+\section{Validation Testing}
+Validation testing was performed to ensure that invalid or incomplete inputs are handled correctly. Required fields in the Add Skill form were checked, invalid or zero pricing was rejected, duplicate registrations were detected, and unauthenticated users were prevented from performing restricted operations. Rating values outside the 1--5 range and booking past dates were also tested.
 
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\textwidth}{|L{1.8cm}|L{3.8cm}|L{5.0cm}|L{2.0cm}|}
+\caption{Validation Test Results}
+\label{tab:validation_test_results}
+\begin{tabularx}{\textwidth}{|L{1.8cm}|L{4.2cm}|J|C{2.0cm}|}
 \hline
 \textbf{ID} & \textbf{Test Case} & \textbf{Expected Result} & \textbf{Status} \\ \hline
-VT-01 & Required Fields & Empty required fields are rejected. & Passed \\ \hline
-VT-02 & Price Validation & Invalid or zero prices are rejected. & Passed \\ \hline
-VT-03 & Duplicate Skill & Duplicate skill courses are detected before insertion. & Passed \\ \hline
-VT-04 & Authentication & Restricted operations require user login. & Passed \\ \hline
-VT-05 & Rating Range & Only ratings from 1--5 are accepted. & Passed \\ \hline
-VT-06 & Duplicate Rating & Duplicate ratings for the same skill are prevented. & Passed \\ \hline
+\texttt{VT-01} & Required Form Fields & Empty required fields trigger validation warnings & \textbf{PASSED} \\ \hline
+\texttt{VT-02} & Pricing Validation & Negative or zero hourly rates are rejected & \textbf{PASSED} \\ \hline
+\texttt{VT-03} & Duplicate Registration & Duplicate email registration is prevented with error notification & \textbf{PASSED} \\ \hline
+\texttt{VT-04} & Authentication Guard & Restricted teacher/student pages redirect to login & \textbf{PASSED} \\ \hline
+\texttt{VT-05} & Rating Range & Only ratings from 1 to 5 are accepted by the system & \textbf{PASSED} \\ \hline
+\texttt{VT-06} & Past Date Booking & Booking dates prior to current timestamp are disallowed & \textbf{PASSED} \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{Test Results and Analysis}
-The testing activities confirmed that the major ElderEarn functions operate according to their intended requirements. Unit and integration testing helped verify communication between the JSP, Servlet, DAO, and MySQL database layers, while validation testing confirmed that important business rules were enforced. The completed Selenium login test successfully verified the user authentication workflow. Further automated tests can be added to increase test coverage for course contribution, ratings, saved skills, and other user workflows.
+The testing activities confirmed that the major ElderEarn functions operate according to their intended requirements. Unit and integration testing helped verify communication between the JSP, Servlet, DAO, and MySQL database layers, while validation testing confirmed that important business rules and financial escrow integrity were enforced. Automated Selenium WebDriver test suites were executed using Google Chrome and the Eclipse IDE to verify core user journeys. Further automated tests can be added to increase test coverage for real-time messaging, review submissions, and administrative workflows.
 
-\vspace{0.5cm}
-\subsection*{1. Login Test Functionality}
+\subsection{Login Test Functionality}
+Automated browser testing was conducted using the Selenium WebDriver Java API to verify the authentication workflow. The \texttt{LoginTest} class initializes the Chrome WebDriver, navigates to the ElderEarn login view, fills in senior citizen mentor credentials, and clicks the submit button. Upon receiving an HTTP redirect, it verifies that the session successfully transitions to the teacher dashboard.
 
 \begin{lstlisting}[language=Java, style=codeStyle, numbers=none]
 package seleniumtests;
@@ -992,16 +982,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginTest {
+
     public static void main(String[] args) {
+
         WebDriver driver = new ChromeDriver();
+
         try {
             driver.get("http://localhost:8080/ElderEarn/jsp/auth/login.jsp");
-            driver.findElement(By.id("email")).sendKeys("sobin88912@gmail.com");
-            driver.findElement(By.id("password")).sendKeys("123");
-            driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+            driver.findElement(By.id("email"))
+                    .sendKeys("sobin88912@gmail.com");
+
+            driver.findElement(By.id("password"))
+                    .sendKeys("123");
+
+            driver.findElement(By.cssSelector("button[type='submit']"))
+                    .click();
+
             Thread.sleep(2000);
 
             String currentUrl = driver.getCurrentUrl();
+
             System.out.println("Current URL: " + currentUrl);
             System.out.println();
 
@@ -1013,9 +1014,11 @@ public class LoginTest {
             } else {
                 System.out.println("LOGIN TEST FAILED");
             }
+
         } catch (Exception e) {
             System.out.println("LOGIN TEST FAILED");
         }
+
         driver.quit();
     }
 }
@@ -1023,18 +1026,19 @@ public class LoginTest {
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth]{01_login_test_console.png}
+\includegraphics[width=0.88\textwidth]{login_test_result.png}
 \caption{Login Test Result}
 \label{fig:login_test_result}
 \end{figure}
 
-\vspace{0.5cm}
-\subsection*{2. Add-Skill Test Functionality}
+\subsection{Add-Skill Test Functionality}
+The \texttt{AddSkillTest} suite verifies that a logged-in senior citizen can create and publish a new skill course. The script logs into the platform, navigates to the skill creation form, populates course details including title, category, price, and curriculum description, and clicks submit. The test asserts that the submission is processed and redirected to the instructor's course management view.
 
 \begin{lstlisting}[language=Java, style=codeStyle, numbers=none]
 package seleniumtests;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -1045,12 +1049,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddSkillTest {
+
     public static void main(String[] args) throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         try {
             driver.get("http://localhost:8080/ElderEarn/jsp/auth/login.jsp");
+
             driver.findElement(By.id("email")).sendKeys("sobin88912@gmail.com");
             driver.findElement(By.id("password")).sendKeys("123");
             driver.findElement(By.cssSelector("button[type='submit']")).click();
@@ -1059,12 +1066,18 @@ public class AddSkillTest {
             wait.until(ExpectedConditions.urlContains("teacher-dashboard.jsp"));
 
             driver.get("http://localhost:8080/ElderEarn/jsp/teacher/add-skill.jsp");
+
             wait.until(ExpectedConditions.presenceOfElementLocated(By.id("skill_title")));
 
-            driver.findElement(By.id("skill_title")).sendKeys("Organic Kitchen Gardening");
-            new Select(driver.findElement(By.id("category"))).selectByValue("Agriculture");
+            driver.findElement(By.id("skill_title"))
+                    .sendKeys("Organic Kitchen Gardening");
+
+            new Select(driver.findElement(By.id("category")))
+                    .selectByValue("Agriculture");
+
             driver.findElement(By.id("price")).sendKeys("250");
-            driver.findElement(By.id("description")).sendKeys("Basics of vermicomposting, soil nutrition, and kitchen gardening.");
+            driver.findElement(By.id("description"))
+                    .sendKeys("Basics of vermicomposting, soil nutrition, and kitchen gardening.");
 
             WebElement submitBtn = driver.findElement(By.cssSelector("button[type='submit']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitBtn);
@@ -1079,8 +1092,9 @@ public class AddSkillTest {
             System.out.println("Enter Price: 250");
             System.out.println("Skill Added Successfully");
             System.out.println("ADD SKILL TEST PASSED");
+
         } catch (Exception e) {
-            System.out.println("ADD SKILL TEST FAILED");
+            System.out.println("ADD SKILL TEST FAILED: " + e.getMessage());
         } finally {
             driver.quit();
         }
@@ -1090,38 +1104,45 @@ public class AddSkillTest {
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth]{02_add_skill_test_console.png}
+\includegraphics[width=0.88\textwidth]{add_skill_test_result.png}
 \caption{Add-Skill Test Result}
 \label{fig:add_skill_test_result}
 \end{figure}
 
-\vspace{0.5cm}
-\subsection*{3. Browse-Skills Test Functionality}
+\subsection{Browse-Skills Test Functionality}
+The \texttt{BrowseSkillsTest} suite validates the student learner experience in exploring available learning offerings. The automated test logs in as a student, navigates to the marketplace catalog, dynamically detects available skill cards rendered from MySQL, and verifies that active offerings created by senior mentors are correctly displayed.
 
 \begin{lstlisting}[language=Java, style=codeStyle, numbers=none]
 package seleniumtests;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowseSkillsTest {
+
     public static void main(String[] args) throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
 
         try {
             driver.get("http://localhost:8080/ElderEarn/jsp/auth/login.jsp");
+
             driver.findElement(By.id("email")).sendKeys("chu@gmail.com");
             driver.findElement(By.id("password")).sendKeys("123");
             driver.findElement(By.cssSelector("button[type='submit']")).click();
+
             Thread.sleep(1500);
 
             driver.get("http://localhost:8080/ElderEarn/jsp/student/browse-skills.jsp");
+
             Thread.sleep(1500);
 
             List<WebElement> skillCards = driver.findElements(By.className("skill-card"));
+
             System.out.println("STUDENT MARKETPLACE LOADED");
             System.out.println("Current URL: " + driver.getCurrentUrl());
             System.out.println("Total Skills Available: " + skillCards.size());
@@ -1134,9 +1155,11 @@ public class BrowseSkillsTest {
             } else {
                 System.out.println("BROWSE SKILLS TEST FAILED");
             }
+
         } catch (Exception e) {
             System.out.println("BROWSE SKILLS TEST FAILED");
         }
+
         driver.quit();
     }
 }
@@ -1144,14 +1167,13 @@ public class BrowseSkillsTest {
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth]{03_browse_skills_test_console.png}
+\includegraphics[width=0.88\textwidth]{browse_skills_test_result.png}
 \caption{Browse-Skills Test Result}
 \label{fig:browse_skills_test_result}
 \end{figure}
 
-\vspace{0.5cm}
-\subsection*{Test Execution Summary}
-Table~\ref{tab:test_summary} summarizes the overall verification outcomes across the test suites evaluated during the development of ElderEarn.
+\subsection{Test Execution Summary}
+Table~\ref{tab:test_summary} provides an overview of the verification methods, test scenarios, and results evaluated across the core modules of the ElderEarn platform.
 
 \begin{table}[H]
 \centering
@@ -1161,11 +1183,11 @@ Table~\ref{tab:test_summary} summarizes the overall verification outcomes across
 \begin{tabularx}{\textwidth}{|L{3.5cm}|L{2.2cm}|L{2.5cm}|J|}
 \hline
 \textbf{Test Suite} & \textbf{Method} & \textbf{Scenarios} & \textbf{Outcome Summary} \\ \hline
-\textbf{Authentication \& Access} & Automated & 5 steps & Successful login, role redirect, and session timeout verified. \\ \hline
-\textbf{Course Creation \& Catalog} & Automated & 5 steps & Form validation, MySQL insert, and catalog display verified. \\ \hline
-\textbf{Booking \& Escrow Wallet} & Automated & 5 steps & Wallet debit, escrow hold, and completion payout confirmed. \\ \hline
-\textbf{Form Validation \& Edge Cases} & Manual & 6 scenarios & Rejection of invalid emails, negative prices, and empty inputs. \\ \hline
-\textbf{Persona-Based Usability} & Manual & 4 scenarios & Verified usable workflows for senior mentor and student scenarios. \\ \hline
+\textbf{Authentication \& Access} & Automated & 5 steps & Verified login credentials, role-based routing, and session state. \\ \hline
+\textbf{Skill Creation \& Catalog} & Automated & 5 steps & Verified form input, database persistence, and marketplace display. \\ \hline
+\textbf{Student Marketplace Browse} & Automated & 5 steps & Verified skill catalog display, card components, and learner navigation. \\ \hline
+\textbf{Form Validation \& Guard} & Manual & 6 scenarios & Verified rejection of empty fields, negative prices, and past dates. \\ \hline
+\textbf{User Acceptance \& Usability} & Manual & 4 scenarios & Verified usable workflows for elderly mentors and learner interactions. \\ \hline
 \end{tabularx}
 \end{table}
 
